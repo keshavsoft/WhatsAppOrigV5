@@ -91,4 +91,8 @@ If you want to run the server with environment variables:
 
 - WA send link in UI also
 
+### 1.1.11
+
+- WA send perfect with port
+
 ---

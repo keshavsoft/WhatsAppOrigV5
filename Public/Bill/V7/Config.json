@@ -1,6 +1,6 @@
 {
-    "StartUrl": "/V6",
-    "TableName": "/V6/BillsTable",
+    "StartUrl": "/V9",
+    "TableName": "/V9/BillsTable",
     "showFooter": true,
     "toolbar": "#toolbar",
     "searchable": true,
