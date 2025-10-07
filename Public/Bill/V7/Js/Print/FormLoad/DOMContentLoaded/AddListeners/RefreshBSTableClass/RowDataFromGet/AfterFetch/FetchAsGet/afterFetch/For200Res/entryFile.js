@@ -1,4 +1,3 @@
-
 let StartFunc = ({ inResponseAsJson }) => {
     inResponseAsJson.forEach(LocalFuncForTemplate);
 
@@ -11,17 +10,12 @@ let StartFunc = ({ inResponseAsJson }) => {
     const jVarLocalTaxableValue = sum * 100 / 118;
     const jVarLocalTaxString = `(CGST ₹${((sum - jVarLocalTaxableValue) / 2).toFixed(2)} + SGST ₹${((sum - jVarLocalTaxableValue) / 2).toFixed(2)})`;
 
-    // LocalFuncForTotal(sum);
-
-
     jFLocalToInputTaxableValueId(`₹ ${jVarLocalTaxableValue.toFixed(2)}`);
     jFLocalToInputTaxSplitId(jVarLocalTaxString);
 };
 
 let LocalFuncForTotalStart = ({ inResponseAsJson }) => {
     const jVarLocalAmountArray = inResponseAsJson.map(element => {
-        // return element.Rate * element.Qty;
-
         return parseInt(((element.Rate * element.Qty) * ((100 - (element.DiscPer === undefined ? 0 : element.DiscPer)) / 100)).toFixed(0));
     });
 

@@ -10,8 +10,17 @@ const StartFunc = () => {
     LocalConfig.onPostBody = StartFuncFromOnPostBody;
     LocalConfig.onPostFooter = StartFuncFromOnPostFooter;
     LocalConfig.onClickRow = StartFuncFromOnClickRow;
-  
+    // LocalConfig.onPostHeader = k1;
+
     $table.bootstrapTable(LocalConfig);
+};
+
+
+let k1 = (inData, inOptions) => {
+    console.log("aaaaaaaaaaa /; ", inOptions);
+
+    console.log("abbbbbbbbbba /; ", inOptions.$tableHeader);
+
 };
 
 export { StartFunc };
