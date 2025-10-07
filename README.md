@@ -111,4 +111,8 @@ If you want to run the server with environment variables:
 
 - Api V11 added, and wa send perfect from UI
 
+### 1.1.16
+
+- bill V8 started, save repeat stopped and error still working on
+
 ---
