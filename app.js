@@ -15,7 +15,7 @@ var port = normalizePort(process.env.PORT || 3000);
 import { StartFunc as StartFuncFromMiddleware } from "./Token/MiddleWares/entryFile.js";
 
 import { StartFunc as StartFuncFromWebSocketServer } from "./Projects/WebSocketServer/V2/entryFile.js";
-import { router as routerFromWA } from "./Projects/WaV4/entryFile.js";
+import { router as routerFromWA } from "./Projects/WaV5/entryFile.js";
 
 import { router as routerFromSecret } from "./Secret/routes.js";
 import { router as routerFromUsers } from "./Users/routes.js";

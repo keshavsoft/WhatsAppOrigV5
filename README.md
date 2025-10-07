@@ -103,4 +103,8 @@ If you want to run the server with environment variables:
 
 - bill add total added to header and new V10 added
 
+### 1.1.14
+
+- bill still need to show wa sent status
+
 ---

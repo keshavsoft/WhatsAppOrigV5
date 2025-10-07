@@ -40,8 +40,4 @@ const DateDifference = () => {
     return differenceInMs;
 };
 
-const InsertWithOutCheckFunc = ({ inValueToInsert }) => {
-    clients.set(new Date(), inValueToInsert);
-};
-
 export { ReadFunc, InsertFunc, CheckLastEntry };
