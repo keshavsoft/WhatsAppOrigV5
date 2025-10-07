@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncTableFooterSaveButtonId } from "./TableFooterSaveButtonId/EntryFile.js";
+// import { StartFunc as StartFuncTableFooterSaveButtonId } from "./TableFooterSaveButtonId/EntryFile.js";
 
 let StartFunc = (inData, inOptions) => {
 
@@ -13,7 +13,7 @@ let StartFunc = (inData, inOptions) => {
     jVarLocalHeader.innerHTML = `Amount ( ${sum} )`
     console.log("----------- : ", inData, inOptions, sum, jVarLocalHeader.innerHTML);
 
-    StartFuncTableFooterSaveButtonId();
+    // StartFuncTableFooterSaveButtonId();
 };
 
 export { StartFunc };
