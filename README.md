@@ -95,4 +95,8 @@ If you want to run the server with environment variables:
 
 - WA send perfect with port
 
+### 1.1.12
+
+- WA send perfect with sand box added
+
 ---
