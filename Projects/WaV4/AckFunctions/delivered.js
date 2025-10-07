@@ -2,38 +2,50 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
+if (!process.env.DataPath) {
+    throw new Error("Environment variable 'DataPath' is not defined.");
+};
+
 const CommonEnvPath = process.env.DataPath;
 
-// Launch the browser and open a new blank page.
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const CommonFilesPath = path.join(__dirname, "..", "..", "..", CommonEnvPath);
 
 const StartFunc = ({ inMsg }) => {
-    const LocalDataPath = path.join(CommonFilesPath, "waAckSent.json");
+    try {
+        const LocalDataPath = path.join(CommonFilesPath, "waAckSent.json");
 
-    const LocalBillsData = fs.readFileSync(LocalDataPath);
-    const LocalBillsDataAsJson = JSON.parse(LocalBillsData);
+        // Read and parse the JSON file
+        const LocalBillsData = fs.readFileSync(LocalDataPath, 'utf-8');
+        const LocalBillsDataAsJson = JSON.parse(LocalBillsData);
 
-    let LocalFindObject = LocalBillsDataAsJson.find(element => {
-        return element.WAAckId === inMsg.id.id;
-    });
+        // Check if the message ID already exists
+        const LocalFindObject = LocalBillsDataAsJson.find(element => {
+            return element.WAAckId === inMsg.id.id;
+        });
 
-    if (LocalFindObject) {
+        if (LocalFindObject) {
+            return false;
+        }
+
+        // Insert new object
+        const LocalInsertObject = {
+            WAAckId: inMsg.id.id,
+            DeliveredTS: new Date()
+        };
+
+        LocalBillsDataAsJson.push(LocalInsertObject);
+
+        // Write updated data back to the file
+        fs.writeFileSync(LocalDataPath, JSON.stringify(LocalBillsDataAsJson, null, 2));
+
+        return true;
+    } catch (error) {
+        console.error("Error in StartFunc:", error);
         return false;
-    };
-
-    let LocalInsertObject = {};
-
-    LocalInsertObject.WAAckId = inMsg.id.id;
-    LocalInsertObject.DeliveredTS = new Date();
-
-    LocalBillsDataAsJson.push(LocalInsertObject);
-
-    fs.writeFileSync(LocalDataPath, JSON.stringify(LocalBillsDataAsJson));
-
-    return true;
+    }
 };
 
 export { StartFunc };
