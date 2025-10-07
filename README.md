@@ -107,4 +107,8 @@ If you want to run the server with environment variables:
 
 - bill still need to show wa sent status
 
+### 1.1.15
+
+- Api V11 added, and wa send perfect from UI
+
 ---

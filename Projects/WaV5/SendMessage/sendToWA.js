@@ -10,16 +10,16 @@ import { getClientInfo } from "../../../CommonExpose/clientInfo.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CommonToNumber = "919848163021@c.us";
+// const CommonToNumber = "919848163021@c.us";
 
-const StartFunc = async ({ inPk }) => {
+const StartFunc = async ({ inPk, inToMobile }) => {
     const LocalClientInfo = getClientInfo();
     // console.log("msg.from : ", msg.from);
     const LocalToPath = path.join(__dirname, "..", "..", "..", "Data", "Output", `${inPk}.pdf`);
 
     const media = MessageMedia.fromFilePath(LocalToPath);
 
-    const LocalFromWA = await LocalClientInfo.sendMessage(CommonToNumber, media);
+    const LocalFromWA = await LocalClientInfo.sendMessage(`91${inToMobile}@c.us`, media);
 
     return LocalFromWA.id.id;
     // console.log("msg.from : ", LocalFromWA.id.id);

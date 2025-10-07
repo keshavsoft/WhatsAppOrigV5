@@ -19,7 +19,7 @@ const StartFunc = async () => {
         authStrategy: new LocalAuth()
     });
 
-    console.log("client : ", client);
+    // console.log("client : ", client);
 
     client.on('qr', qr => {
         console.log("qr is generated : ", qr);

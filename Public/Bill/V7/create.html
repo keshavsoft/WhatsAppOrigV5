@@ -235,7 +235,6 @@
             <div class="row">
                 <div class="col">
                     <form onsubmit="return false" id="FormId">
-
                         <div class="row">
                             <div class="col-lg-12 col-md-6 mb-3"><label for="HtmlId-BuyerName"
                                     class="form-label">BuyerName</label>
@@ -251,6 +250,16 @@
                                     id="HtmlId-BuyerAddress" name="BuyerAddress" autocomplete="off">
                                 <div class="invalid-feedback"></div>
                             </div>
+                            <div class="col-lg-12 col-md-6 mb-3"><label for="HtmlId-BuyerMobile"
+                                    class="form-label">Mobile</label>
+                                <input type="text" class="form-control" id="HtmlId-BuyerMobile" name="BuyerMobile"
+                                    autocomplete="off" autofocus list="BuyerMobileDLId">
+
+                                <datalist id="BuyerMobileDLId">
+                                </datalist>
+                                <div class="invalid-feedback"></div>
+                            </div>
+
                             <div class="col-lg-12 col-md-6 mb-3"><label for="HtmlId-BuyerGST"
                                     class="form-label">BuyerGST</label>
                                 <input type="text" class="form-control" id="HtmlId-BuyerGST" name="BuyerGST"

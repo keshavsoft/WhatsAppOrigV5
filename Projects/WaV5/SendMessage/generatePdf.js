@@ -18,6 +18,7 @@ const StartFunc = async ({ inPk }) => {
     // const browser = await puppeteer.launch();
 
     const browser = await puppeteer.launch({
+
         args: ['--no-sandbox', '--disable-setuid-sandbox'], // --disable-setuid-sandbox is often used in conjunction
         // You might also need to specify the executablePath if Chromium is not in a standard location
         // executablePath: '/usr/bin/chromium-browser' 
@@ -36,6 +37,8 @@ const StartFunc = async ({ inPk }) => {
     await page.pdf({ path: `${CommonToPath}/${inPk}.pdf`, format: 'A4' })
 
     await browser.close();
+
+    return await LocalData.Head.BuyerMobile;
 };
 
 const LocalFuncForTotal = ({ inItemsArray }) => {
