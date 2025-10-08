@@ -119,4 +119,8 @@ If you want to run the server with environment variables:
 
 - bill V8 vill in index error
 
+### 1.1.18
+
+- bill V9 started for error handling in index.html
+
 ---
