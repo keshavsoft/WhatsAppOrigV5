@@ -115,4 +115,8 @@ If you want to run the server with environment variables:
 
 - bill V8 started, save repeat stopped and error still working on
 
+### 1.1.17
+
+- bill V8 vill in index error
+
 ---

@@ -1,9 +1,11 @@
 let StartFunc = () => {
     const jVarLocalItemName = jFLocalHtmlIdItemName();
-    // console.log("jVarLocalItemName : ", jVarLocalItemName);
+    console.log("jVarLocalItemName : ", jVarLocalItemName);
     if (jVarLocalItemName === "") {
         let jVarLocalHtmlIdItemName = 'HtmlId-ItemName'
         let jVarLocalHtmlId = document.getElementById(jVarLocalHtmlIdItemName);
+
+        jVarLocalHtmlId.classList.add("is-invalid")
 
         jVarLocalHtmlId.focus();
 
