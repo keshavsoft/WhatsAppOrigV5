@@ -5,7 +5,7 @@ let StartFunc = (inData, inOptions) => {
     StartFuncTableFooterSaveButtonId();
 
     // const k1 = inOptions.$tableFooter[0].querySelectorAll("th")[1].querySelector("input");
-    const jVarLocalColumns = inOptions.columns;
+    // const jVarLocalColumns = inOptions.columns;
     // console.log("jVarLocalColumns", jVarLocalColumns);
     const jVarLocalFooterCells = inOptions.$tableFooter[0].querySelectorAll("th");
 

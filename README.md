@@ -132,4 +132,8 @@ Ensure Node.js version is v22.22 or above
 
 - bill V9 started for error handling in index.html
 
+### 1.1.19
+
+- bill V9 started item, rate error perfect
+
 ---

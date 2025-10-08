@@ -2,7 +2,7 @@ let jVarLocalHtmlIdItemName = 'HtmlId-ItemName'
 
 let StartFunc = () => {
     const jVarLocalItemName = jFLocalHtmlIdItemName();
-    console.log("jVarLocalItemName : ", jVarLocalItemName);
+    // console.log("jVarLocalItemName : ", jVarLocalItemName);
     let jVarLocalHtmlId = document.getElementById(jVarLocalHtmlIdItemName);
 
     if (jVarLocalItemName === "") {
@@ -13,7 +13,8 @@ let StartFunc = () => {
 
         return false
     } else {
-        jVarLocalHtmlId.classList.add("is-valid")
+        jVarLocalHtmlId.classList.remove("is-invalid");
+        jVarLocalHtmlId.classList.add("is-valid");
     };
 
     return true;
