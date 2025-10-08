@@ -22,6 +22,7 @@ import { router as routerFromUsers } from "./Users/routes.js";
 import { router as routerFromV9 } from "./V9/routes.js";
 import { router as routerFromV10 } from "./V10/routes.js";
 import { router as routerFromV11 } from "./V11/routes.js";
+import { router as routerFromV12 } from "./V12/routes.js";
 
 app.use(express.static('Public'));
 app.use(cookieParser());
@@ -33,6 +34,7 @@ app.use("/Users", routerFromUsers);
 app.use("/V9", routerFromV9);
 app.use("/V10", routerFromV10);
 app.use("/V11", routerFromV11);
+app.use("/V12", routerFromV12);
 
 StartFuncFromWebSocketServer(server);
 

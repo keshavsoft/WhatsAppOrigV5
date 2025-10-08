@@ -136,4 +136,8 @@ Ensure Node.js version is v22.22 or above
 
 - bill V9 started item, rate error perfect
 
+### 1.1.20
+
+- new V12 added and working on yesterday
+
 ---
