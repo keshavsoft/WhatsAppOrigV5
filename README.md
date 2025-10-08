@@ -1,21 +1,36 @@
-# WhatsAppOrigV2
+# WhatsAppOrigV5
 
-This project helps you run a local server for WhatsAppOrigV2. Follow the steps below to set up and run the project on your machine.
+This project helps you run a local server for WhatsAppOrigV5. Follow the steps below to set up and run the project on your machine.
 
 ---
+
+✅ Summary
+
+1.Clone the repo
+
+2.Install packages
+
+3.Remove <--env-file=.env> from package.json
+
+4.Run npm run start (server runs at port 3000)
+
+5.(Optional) Use .env.local → .env for environment setup
+
+6.Ensure Node.js version is v22.22 or above
+
 
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
 Open your terminal (bash) and clone the repository:
 bash
-git clone https://github.com/keshavsoft/WhatsAppOrigV2
+git clone https://github.com/keshavsoft/WhatsAppOrigV5
 
 
 ### 2. Install Dependencies
 Navigate into the project folder and install all required packages:
 bash
-cd WhatsAppOrigV2
+cd WhatsAppOrigV5
 npm install
 
 
@@ -41,15 +56,9 @@ If you want to run the server with environment variables:
    bash
    npm run start
    
-
+### 6. Ensure Node.js version 
+Ensure Node.js version is v22.22 or above
 ---
-
-## ✅ Summary
-1. Clone repo  
-2. Install packages  
-3. Remove -env-file=.env in package.json  
-4. Run npm run start (server runs at port 3000)  
-5. (Optional) Use .env.local → .env for environment setup
 
 ### 1.1.1
 
