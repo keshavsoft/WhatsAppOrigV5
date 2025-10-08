@@ -12,7 +12,7 @@ let StartFunc = () => {
 
     if (jVarLocalFromItemRate === false) { return false; }
 
-    return false;
+    return true;
 };
 
 export { StartFunc }
