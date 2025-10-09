@@ -1,5 +1,5 @@
 let StartFunc = ({ inResponseAsJson }) => {
-     alert("WhatsApp message sent successfully!");
+  alert("WhatsApp message sent successfully!");
 };
 
 export { StartFunc };

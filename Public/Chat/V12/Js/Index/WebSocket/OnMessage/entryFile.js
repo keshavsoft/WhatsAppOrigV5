@@ -7,37 +7,37 @@ import { StartFunc as StartFuncFromreturnOnlineClients } from "../OnMessage/retu
 import { StartFunc as StartFuncFromMyChat } from "../OnMessage/myChat.js";
 
 let StartFunc = (event) => {
-    try {
-        let jVarLocalParsedData = JSON.parse(event.data);
+  try {
+    let jVarLocalParsedData = JSON.parse(event.data);
 
-        // console.log("jVarLocalParsedData : ", jVarLocalParsedData);
-        
-        switch (jVarLocalParsedData?.Type) {
-            case "wAProfile":
-                StartFuncFromwAProfile({ inData: jVarLocalParsedData.res });
-                break;
-            case "returnOnlineClients":
-                StartFuncFromreturnOnlineClients({ inData: jVarLocalParsedData.res });
-                break;
-            case "ChangeName":
-                StartFuncFromChangeName(
-                    jVarLocalParsedData.Message,
-                    jVarLocalParsedData.fromId
-                );
-                break;
-            case "GetWebSocketId":
-                StartFuncFromGetWebSocketId({
-                    inData: jVarLocalParsedData.webSocketId,
-                });
-            case "myChat":
-                StartFuncFromMyChat({ inData: jVarLocalParsedData.ChatLog });
-                break;
-            default:
-                break;
-        }
-    } catch (error) {
-        // jFLocalShowMessage({ inMessage: event.data });
+    // console.log("jVarLocalParsedData : ", jVarLocalParsedData);
+
+    switch (jVarLocalParsedData?.Type) {
+      case "wAProfile":
+        StartFuncFromwAProfile({ inData: jVarLocalParsedData.res });
+        break;
+      case "returnOnlineClients":
+        StartFuncFromreturnOnlineClients({ inData: jVarLocalParsedData.res });
+        break;
+      case "ChangeName":
+        StartFuncFromChangeName(
+          jVarLocalParsedData.Message,
+          jVarLocalParsedData.fromId,
+        );
+        break;
+      case "GetWebSocketId":
+        StartFuncFromGetWebSocketId({
+          inData: jVarLocalParsedData.webSocketId,
+        });
+      case "myChat":
+        StartFuncFromMyChat({ inData: jVarLocalParsedData.ChatLog });
+        break;
+      default:
+        break;
     }
+  } catch (error) {
+    // jFLocalShowMessage({ inMessage: event.data });
+  }
 };
 
 export { StartFunc };

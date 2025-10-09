@@ -1,7 +1,7 @@
 $("#summernote").summernote({
   tabsize: 2,
   height: 120,
-})
+});
 $("#hint").summernote({
   height: 100,
   toolbar: false,
@@ -12,9 +12,9 @@ $("#hint").summernote({
     search: function (keyword, callback) {
       callback(
         $.grep(this.words, function (item) {
-          return item.indexOf(keyword) === 0
-        })
-      )
+          return item.indexOf(keyword) === 0;
+        }),
+      );
     },
   },
-})
+});

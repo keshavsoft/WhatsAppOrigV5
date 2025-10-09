@@ -1,52 +1,52 @@
 let StartFunc = ({ inData }) => {
-    const tbody = document.querySelector("#active-convos-list");
-    console.log("inData : ", inData);
+  const tbody = document.querySelector("#active-convos-list");
+  console.log("inData : ", inData);
 
-    if (tbody) tbody.innerHTML = "";
+  if (tbody) tbody.innerHTML = "";
 
-    inData.forEach((element) => {
-        let jVarLocalUserNameId = document.getElementById('UserNameId');
-        const jVarLocalWebSocketId = jVarLocalUserNameId.dataset.webSocketId;
+  inData.forEach((element) => {
+    let jVarLocalUserNameId = document.getElementById("UserNameId");
+    const jVarLocalWebSocketId = jVarLocalUserNameId.dataset.webSocketId;
 
-        if (element.id === jVarLocalWebSocketId) {
-            // console.log("aaaaaaaaaaaaa");
-            jFLocalToInputUserNameId(element.Name);
-        } else {
-            jFLocalAddToDom({
-                inName: element.Name,
-                inId: element.id,
-            });
-        };
-    });
+    if (element.id === jVarLocalWebSocketId) {
+      // console.log("aaaaaaaaaaaaa");
+      jFLocalToInputUserNameId(element.Name);
+    } else {
+      jFLocalAddToDom({
+        inName: element.Name,
+        inId: element.id,
+      });
+    }
+  });
 };
 
 let jFLocalToInputUserNameId = (inValue) => {
-    let jVarLocalHtmlId = 'UserNameId';
-    let jVarLocalUserNameId = document.getElementById(jVarLocalHtmlId);
+  let jVarLocalHtmlId = "UserNameId";
+  let jVarLocalUserNameId = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalUserNameId === null === false) {
-        jVarLocalUserNameId.innerHTML = inValue;
-    };
+  if ((jVarLocalUserNameId === null) === false) {
+    jVarLocalUserNameId.innerHTML = inValue;
+  }
 };
 
 const jFLocalAddToDom = ({ inName, inId }) => {
-    const conversationList = document.getElementById("active-convos-list");
-    const conversationTemplate = document.getElementById("convo-template");
+  const conversationList = document.getElementById("active-convos-list");
+  const conversationTemplate = document.getElementById("convo-template");
 
-    const randomName = inName;
+  const randomName = inName;
 
-    // Clone the template for a new conversation
-    const newConvo = conversationTemplate.content.cloneNode(true);
-    // Set the name and initial
-    newConvo.querySelector(".convo-name").textContent = randomName;
-    newConvo.querySelector(".convo-initial").textContent = randomName
-        .charAt(0)
-        .toUpperCase();
+  // Clone the template for a new conversation
+  const newConvo = conversationTemplate.content.cloneNode(true);
+  // Set the name and initial
+  newConvo.querySelector(".convo-name").textContent = randomName;
+  newConvo.querySelector(".convo-initial").textContent = randomName
+    .charAt(0)
+    .toUpperCase();
 
-    newConvo.querySelector("button").dataset.websocketid = inId;
+  newConvo.querySelector("button").dataset.websocketid = inId;
 
-    // Add the new conversation to the list
-    conversationList.appendChild(newConvo);
+  // Add the new conversation to the list
+  conversationList.appendChild(newConvo);
 };
 
 export { StartFunc };

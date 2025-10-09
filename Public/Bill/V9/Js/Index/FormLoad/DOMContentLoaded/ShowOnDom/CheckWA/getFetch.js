@@ -1,9 +1,8 @@
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/WA/Check`;
-    let response = await fetch(jVarLocalFetchUrl);
+  let jVarLocalFetchUrl = `/WA/Check`;
+  let response = await fetch(jVarLocalFetchUrl);
 
-    return await response;
+  return await response;
 };
 
 export { StartFunc };
-

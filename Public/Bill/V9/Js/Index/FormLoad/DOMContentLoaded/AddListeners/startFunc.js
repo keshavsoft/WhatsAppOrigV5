@@ -2,8 +2,8 @@ import { StartFunc as StartFuncFromRefreshBSTableClass } from "./RefreshBSTableC
 import { StartFunc as RefreshBSTableOnlyClass } from "./RefreshBSTableOnlyClass/entryFile.js";
 
 let StartFunc = () => {
-    RefreshBSTableOnlyClass();
-    StartFuncFromRefreshBSTableClass();
+  RefreshBSTableOnlyClass();
+  StartFuncFromRefreshBSTableClass();
 };
 
 export { StartFunc };

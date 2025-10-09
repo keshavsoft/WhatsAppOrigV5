@@ -1,4 +1,4 @@
 {
-    "GetEndPoint1": "Filter/RowFilter/FK/{inValue}",
-    "GetEndPoint": "Filter/ByKeyAndValue/FK/{inValue}"
+  "GetEndPoint1": "Filter/RowFilter/FK/{inValue}",
+  "GetEndPoint": "Filter/ByKeyAndValue/FK/{inValue}"
 }

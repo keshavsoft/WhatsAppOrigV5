@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    return true;
+  return true;
 };
 
-export { StartFunc }
+export { StartFunc };

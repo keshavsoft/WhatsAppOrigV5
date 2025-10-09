@@ -5,11 +5,11 @@ import { StartFunc as StartFuncFromAddListenersForHeading } from "./AddListeners
 import { StartFunc as StartFuncFromToDataList } from "./ToDataList/entryFile.js";
 
 const StartFunc = () => {
-    StartFuncFromHtmlTable();
-    StartFuncAddListeners();
-    StartFuncFromShowOnDom();
-    StartFuncFromAddListenersForHeading();
-    StartFuncFromToDataList();
+  StartFuncFromHtmlTable();
+  StartFuncAddListeners();
+  StartFuncFromShowOnDom();
+  StartFuncFromAddListenersForHeading();
+  StartFuncFromToDataList();
 };
 
 export { StartFunc };

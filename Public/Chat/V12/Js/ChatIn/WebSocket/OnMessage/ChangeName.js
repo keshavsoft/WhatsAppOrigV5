@@ -1,11 +1,11 @@
-let StartFunc = (inValue , fromId) => {
+let StartFunc = (inValue, fromId) => {
   // console.log("inValue : ", inValue);
-  let fromdomwebsocketId = document.getElementById("UserNameId").dataset.webSocketId;
+  let fromdomwebsocketId =
+    document.getElementById("UserNameId").dataset.webSocketId;
   if (fromdomwebsocketId === fromId) {
     jFLocalToInputUserNameId(inValue);
-  } 
-  
-}; 
+  }
+};
 
 let jFLocalToInputUserNameId = (inValue) => {
   let jVarLocalHtmlId = "UserNameId";

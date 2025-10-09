@@ -1,29 +1,32 @@
 let StartFunc = ({ inResponseAsJson }) => {
-    var $table = $('#table');
+  var $table = $("#table");
 
-    $table.bootstrapTable("load", inResponseAsJson);
-    console.log("aaaaaaaa : ", inResponseAsJson);
+  $table.bootstrapTable("load", inResponseAsJson);
+  console.log("aaaaaaaa : ", inResponseAsJson);
 
-    jFLocalTotalAmount({ inResponseAsJson });
+  jFLocalTotalAmount({ inResponseAsJson });
 };
 
 const jFLocalTotalAmount = ({ inResponseAsJson }) => {
-    const jVarLocalAmountArray = inResponseAsJson.map(element => {
-        return element.Rate * element.Qty;
-    });
+  const jVarLocalAmountArray = inResponseAsJson.map((element) => {
+    return element.Rate * element.Qty;
+  });
 
-    const sum = jVarLocalAmountArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const sum = jVarLocalAmountArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0,
+  );
 
-    jFLocalToInputTotalBillAmountId(`₹ ${sum}`);
+  jFLocalToInputTotalBillAmountId(`₹ ${sum}`);
 };
 
 let jFLocalToInputTotalBillAmountId = (inValue) => {
-    let jVarLocalHtmlId = 'TotalBillAmountId';
-    let jVarLocalTotalBillAmountId = document.getElementById(jVarLocalHtmlId);
+  let jVarLocalHtmlId = "TotalBillAmountId";
+  let jVarLocalTotalBillAmountId = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalTotalBillAmountId === null === false) {
-        jVarLocalTotalBillAmountId.innerHTML = inValue;
-    };
+  if ((jVarLocalTotalBillAmountId === null) === false) {
+    jVarLocalTotalBillAmountId.innerHTML = inValue;
+  }
 };
 
 export { StartFunc };

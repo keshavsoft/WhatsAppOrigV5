@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    webSocket.send("myChat");
+  webSocket.send("myChat");
 };
 
 export { StartFunc };

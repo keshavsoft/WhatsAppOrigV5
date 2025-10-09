@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    return true;
+  return true;
 };
 
 export { StartFunc };

@@ -1,13 +1,16 @@
 let StartFunc = () => {
-    let jVarLocalRefreshBSTableId = document.querySelector(`.RefreshBSTableClass`);
-    jVarLocalRefreshBSTableId.click();
+  let jVarLocalRefreshBSTableId =
+    document.querySelector(`.RefreshBSTableClass`);
+  jVarLocalRefreshBSTableId.click();
 
-    jFLocalRunYesterday();
+  jFLocalRunYesterday();
 };
 
 const jFLocalRunYesterday = () => {
-    let jVarLocalRefreshBSTableId = document.querySelector(`.RefreshBSTableYesterdayClass`);
-    jVarLocalRefreshBSTableId.click();
+  let jVarLocalRefreshBSTableId = document.querySelector(
+    `.RefreshBSTableYesterdayClass`,
+  );
+  jVarLocalRefreshBSTableId.click();
 };
 
 export { StartFunc };

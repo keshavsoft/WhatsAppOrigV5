@@ -1,24 +1,24 @@
 const StartFunc = (data) => {
-    jFLocalRemoveClass();
-    jFLocalAddClass();
+  jFLocalRemoveClass();
+  jFLocalAddClass();
 };
 
 let jFLocalRemoveClass = () => {
-    let jVarLocalHtmlId = 'SendWAid';
-    let jVarLocalSendWaUseFailureId = document.getElementById(jVarLocalHtmlId);
+  let jVarLocalHtmlId = "SendWAid";
+  let jVarLocalSendWaUseFailureId = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalSendWaUseFailureId === null === false) {
-        jVarLocalSendWaUseFailureId.classList.remove("text-white");
-    };
+  if ((jVarLocalSendWaUseFailureId === null) === false) {
+    jVarLocalSendWaUseFailureId.classList.remove("text-white");
+  }
 };
 
 let jFLocalAddClass = () => {
-    let jVarLocalHtmlId = 'SendWAid';
-    let jVarLocalSendWaUseFailureId = document.getElementById(jVarLocalHtmlId);
+  let jVarLocalHtmlId = "SendWAid";
+  let jVarLocalSendWaUseFailureId = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalSendWaUseFailureId === null === false) {
-        jVarLocalSendWaUseFailureId.classList.remove("text-info");
-    };
+  if ((jVarLocalSendWaUseFailureId === null) === false) {
+    jVarLocalSendWaUseFailureId.classList.remove("text-info");
+  }
 };
 
 export { StartFunc };

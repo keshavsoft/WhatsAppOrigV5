@@ -3,13 +3,13 @@ import { StartFunc as CheckFunc } from "./checkFunc.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/entryFile.js";
 
 let StartFunc = async () => {
-    let jVarLocalFromCheck = CheckFunc();
+  let jVarLocalFromCheck = CheckFunc();
 
-    if (jVarLocalFromCheck) {
-        let jVarLocalResponse = await StartFuncFetchFuncs();
+  if (jVarLocalFromCheck) {
+    let jVarLocalResponse = await StartFuncFetchFuncs();
 
-        StartFuncAfterFetch({ inDataToShow: jVarLocalResponse });
-    };
+    StartFuncAfterFetch({ inDataToShow: jVarLocalResponse });
+  }
 };
 
-export { StartFunc }
+export { StartFunc };

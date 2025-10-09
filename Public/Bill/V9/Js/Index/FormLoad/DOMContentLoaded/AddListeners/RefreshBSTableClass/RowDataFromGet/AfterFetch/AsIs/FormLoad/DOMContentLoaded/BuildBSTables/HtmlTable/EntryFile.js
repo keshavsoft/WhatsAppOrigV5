@@ -1,7 +1,7 @@
 const StartFunc = () => {
-    var $table = $('#table');
+  var $table = $("#table");
 
-    $table.bootstrapTable();
+  $table.bootstrapTable();
 };
 
 export { StartFunc };

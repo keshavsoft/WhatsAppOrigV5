@@ -5,23 +5,22 @@ let jVarLocalHostName = window.location.host;
 let jVarLocalUrlForWS;
 
 if (location.protocol === "https:") {
-    jVarLocalUrlForWS = "wss://" + jVarLocalHostName;
+  jVarLocalUrlForWS = "wss://" + jVarLocalHostName;
 }
 if (location.protocol === "http:") {
-    jVarLocalUrlForWS = "ws://" + jVarLocalHostName;
+  jVarLocalUrlForWS = "ws://" + jVarLocalHostName;
 }
 let StartFunc = () => {
-    jFLocalEstablishWebSocket();
+  jFLocalEstablishWebSocket();
 };
 
 let jFLocalEstablishWebSocket = () => {
-    webSocket = new WebSocket(jVarLocalUrlForWS);
+  webSocket = new WebSocket(jVarLocalUrlForWS);
 
-    webSocket.onopen = onOpen;
-    webSocket.onmessage = onMessage;
+  webSocket.onopen = onOpen;
+  webSocket.onmessage = onMessage;
 
-    webSocket.onclose = function (e) {
-    };
+  webSocket.onclose = function (e) {};
 };
 
 StartFunc();

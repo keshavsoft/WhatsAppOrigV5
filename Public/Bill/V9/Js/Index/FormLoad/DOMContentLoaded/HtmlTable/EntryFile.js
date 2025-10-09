@@ -3,16 +3,16 @@ import { StartFunc as StartFuncFromOnPostFooter } from "./OnPostFooter/EntryFile
 import { StartFunc as StartFuncFromOnClickRow } from "./OnClickRow/entryFile.js";
 
 const StartFunc = () => {
-    // debugger
-    var $table = $('#table');
+  // debugger
+  var $table = $("#table");
 
-    let LocalConfig = {};
-    LocalConfig.onPostBody = StartFuncFromOnPostBody;
-    LocalConfig.onPostFooter = StartFuncFromOnPostFooter;
-    LocalConfig.onClickRow = StartFuncFromOnClickRow;
-    // LocalConfig.onPostHeader = k1;
+  let LocalConfig = {};
+  LocalConfig.onPostBody = StartFuncFromOnPostBody;
+  LocalConfig.onPostFooter = StartFuncFromOnPostFooter;
+  LocalConfig.onClickRow = StartFuncFromOnClickRow;
+  // LocalConfig.onPostHeader = k1;
 
-    $table.bootstrapTable(LocalConfig);
+  $table.bootstrapTable(LocalConfig);
 };
 
 export { StartFunc };

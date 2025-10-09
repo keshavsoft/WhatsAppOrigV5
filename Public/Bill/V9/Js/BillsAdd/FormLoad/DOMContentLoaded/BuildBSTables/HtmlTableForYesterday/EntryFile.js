@@ -1,13 +1,13 @@
 import { StartFunc as StartFuncOnClickRowFunc } from "./onClickRow/entryFile.js";
 
 const StartFunc = () => {
-    var $table = $('#tableYesterday');
+  var $table = $("#tableYesterday");
 
-    const finalOptions = {
-        // onClickRow: StartFuncOnClickRowFunc
-    };
+  const finalOptions = {
+    // onClickRow: StartFuncOnClickRowFunc
+  };
 
-    $table.bootstrapTable(finalOptions);
+  $table.bootstrapTable(finalOptions);
 };
 
 export { StartFunc };

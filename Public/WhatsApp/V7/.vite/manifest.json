@@ -16,12 +16,8 @@
     "name": "account-profile",
     "src": "account-profile.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill.js"
-    ],
-    "css": [
-      "assets/compiled/css/app-dark.css"
-    ],
+    "imports": ["_modulepreload-polyfill.js"],
+    "css": ["assets/compiled/css/app-dark.css"],
     "assets": [
       "assets/compiled/fonts/bootstrap-icons.woff2",
       "assets/compiled/fonts/nunito-latin-300-normal.woff2",
@@ -136,12 +132,8 @@
     "name": "import-Excel",
     "src": "import-Excel.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill.js"
-    ],
-    "css": [
-      "assets/compiled/css/app-dark.css"
-    ],
+    "imports": ["_modulepreload-polyfill.js"],
+    "css": ["assets/compiled/css/app-dark.css"],
     "assets": [
       "assets/compiled/fonts/bootstrap-icons.woff2",
       "assets/compiled/fonts/nunito-latin-300-normal.woff2",
@@ -167,24 +159,16 @@
     "name": "scanQr",
     "src": "scanQr.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill.js"
-    ],
-    "assets": [
-      "assets/compiled/gif/giphy.gif"
-    ]
+    "imports": ["_modulepreload-polyfill.js"],
+    "assets": ["assets/compiled/gif/giphy.gif"]
   },
   "sendMessage.html": {
     "file": "assets/compiled/js/sendMessage.js",
     "name": "sendMessage",
     "src": "sendMessage.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill.js"
-    ],
-    "css": [
-      "assets/compiled/css/app-dark.css"
-    ],
+    "imports": ["_modulepreload-polyfill.js"],
+    "css": ["assets/compiled/css/app-dark.css"],
     "assets": [
       "assets/compiled/fonts/bootstrap-icons.woff2",
       "assets/compiled/fonts/nunito-latin-300-normal.woff2",

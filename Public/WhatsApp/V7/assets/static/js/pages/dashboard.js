@@ -36,7 +36,7 @@ var optionsProfileVisit = {
       "Dec",
     ],
   },
-}
+};
 let optionsVisitorsProfile = {
   series: [70, 30],
   labels: ["Male", "Female"],
@@ -56,7 +56,7 @@ let optionsVisitorsProfile = {
       },
     },
   },
-}
+};
 
 var optionsEurope = {
   series: [
@@ -119,17 +119,17 @@ var optionsEurope = {
       format: "dd/MM/yy HH:mm",
     },
   },
-}
+};
 
 let optionsAmerica = {
   ...optionsEurope,
   colors: ["#008b75"],
-}
+};
 let optionsIndia = {
   ...optionsEurope,
   colors: ["#ffc434"],
-}
+};
 let optionsIndonesia = {
   ...optionsEurope,
   colors: ["#dc3545"],
-}
+};

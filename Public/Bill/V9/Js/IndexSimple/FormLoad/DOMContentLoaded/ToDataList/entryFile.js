@@ -1,7 +1,7 @@
-import { StartFunc as ItemsDatalist } from './ItemsDatalist/entryFile.js'
+import { StartFunc as ItemsDatalist } from "./ItemsDatalist/entryFile.js";
 
 const StartFunc = () => {
-    ItemsDatalist()
+  ItemsDatalist();
 };
 
 export { StartFunc };

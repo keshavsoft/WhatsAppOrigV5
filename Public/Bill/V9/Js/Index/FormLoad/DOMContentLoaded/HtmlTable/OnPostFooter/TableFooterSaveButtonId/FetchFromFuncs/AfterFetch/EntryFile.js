@@ -1,9 +1,10 @@
 let StartFunc = () => {
-    // window.location.reload();
+  // window.location.reload();
 
-    let jVarLocalRefreshBSTableId = document.querySelector(`.RefreshBSTableClass`);
+  let jVarLocalRefreshBSTableId =
+    document.querySelector(`.RefreshBSTableClass`);
 
-    jVarLocalRefreshBSTableId.click();
+  jVarLocalRefreshBSTableId.click();
 };
 
 export { StartFunc };

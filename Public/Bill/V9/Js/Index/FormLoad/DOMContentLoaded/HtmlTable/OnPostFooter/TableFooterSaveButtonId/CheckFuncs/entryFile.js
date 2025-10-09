@@ -2,17 +2,19 @@ import { StartFunc as StartFuncFromForItemName } from "./forItemName.js";
 import { StartFunc as StartFuncFromForItemRate } from "./forItemRate.js";
 
 let StartFunc = () => {
-    const jVarLocalFromItemName = StartFuncFromForItemName();
+  const jVarLocalFromItemName = StartFuncFromForItemName();
 
-    if (jVarLocalFromItemName === false) {
-        return false;
-    }
+  if (jVarLocalFromItemName === false) {
+    return false;
+  }
 
-    const jVarLocalFromItemRate = StartFuncFromForItemRate();
+  const jVarLocalFromItemRate = StartFuncFromForItemRate();
 
-    if (jVarLocalFromItemRate === false) { return false; }
+  if (jVarLocalFromItemRate === false) {
+    return false;
+  }
 
-    return true;
+  return true;
 };
 
-export { StartFunc }
+export { StartFunc };

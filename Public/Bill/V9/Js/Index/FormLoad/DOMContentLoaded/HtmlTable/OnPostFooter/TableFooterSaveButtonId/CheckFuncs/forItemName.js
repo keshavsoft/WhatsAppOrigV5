@@ -1,31 +1,30 @@
-let jVarLocalHtmlIdItemName = 'HtmlId-ItemName'
+let jVarLocalHtmlIdItemName = "HtmlId-ItemName";
 
 let StartFunc = () => {
-    const jVarLocalItemName = jFLocalHtmlIdItemName();
-    // console.log("jVarLocalItemName : ", jVarLocalItemName);
-    let jVarLocalHtmlId = document.getElementById(jVarLocalHtmlIdItemName);
+  const jVarLocalItemName = jFLocalHtmlIdItemName();
+  // console.log("jVarLocalItemName : ", jVarLocalItemName);
+  let jVarLocalHtmlId = document.getElementById(jVarLocalHtmlIdItemName);
 
-    if (jVarLocalItemName === "") {
+  if (jVarLocalItemName === "") {
+    jVarLocalHtmlId.classList.add("is-invalid");
 
-        jVarLocalHtmlId.classList.add("is-invalid")
+    jVarLocalHtmlId.focus();
 
-        jVarLocalHtmlId.focus();
+    return false;
+  } else {
+    jVarLocalHtmlId.classList.remove("is-invalid");
+    jVarLocalHtmlId.classList.add("is-valid");
+  }
 
-        return false
-    } else {
-        jVarLocalHtmlId.classList.remove("is-invalid");
-        jVarLocalHtmlId.classList.add("is-valid");
-    };
-
-    return true;
+  return true;
 };
 
 let jFLocalHtmlIdItemName = () => {
-    let jVarLocalHtmlId = document.getElementById(jVarLocalHtmlIdItemName);
+  let jVarLocalHtmlId = document.getElementById(jVarLocalHtmlIdItemName);
 
-    if (jVarLocalHtmlId === null === false) {
-        return jVarLocalHtmlId.value.trim();
-    };
+  if ((jVarLocalHtmlId === null) === false) {
+    return jVarLocalHtmlId.value.trim();
+  }
 };
 
-export { StartFunc }
+export { StartFunc };

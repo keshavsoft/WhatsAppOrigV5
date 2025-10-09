@@ -1,24 +1,24 @@
 const StartFunc = (data) => {
-    jFLocalDisplayNoneSendWaUseFailureId();
-    jFLocalDisplayShowSendWaUseSuccessId();
+  jFLocalDisplayNoneSendWaUseFailureId();
+  jFLocalDisplayShowSendWaUseSuccessId();
 };
 
 let jFLocalDisplayNoneSendWaUseFailureId = () => {
-    let jVarLocalHtmlId = 'SendWaUseFailureId';
-    let jVarLocalSendWaUseFailureId = document.getElementById(jVarLocalHtmlId);
+  let jVarLocalHtmlId = "SendWaUseFailureId";
+  let jVarLocalSendWaUseFailureId = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalSendWaUseFailureId === null === false) {
-        jVarLocalSendWaUseFailureId.style.display = 'none';
-    };
+  if ((jVarLocalSendWaUseFailureId === null) === false) {
+    jVarLocalSendWaUseFailureId.style.display = "none";
+  }
 };
 
 let jFLocalDisplayShowSendWaUseSuccessId = () => {
-    let jVarLocalHtmlId = 'SendWaUseSuccessId';
-    let jVarLocalSendWaUseSuccessId = document.getElementById(jVarLocalHtmlId);
+  let jVarLocalHtmlId = "SendWaUseSuccessId";
+  let jVarLocalSendWaUseSuccessId = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalSendWaUseSuccessId === null === false) {
-        jVarLocalSendWaUseSuccessId.style.display = '';
-    };
+  if ((jVarLocalSendWaUseSuccessId === null) === false) {
+    jVarLocalSendWaUseSuccessId.style.display = "";
+  }
 };
 
 export { StartFunc };

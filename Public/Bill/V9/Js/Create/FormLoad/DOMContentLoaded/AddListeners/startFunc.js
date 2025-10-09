@@ -1,7 +1,7 @@
 import { StartFunc as SaveButtonId } from "./SaveButtonId/entryFile.js";
 
 let StartFunc = () => {
-    SaveButtonId();
+  SaveButtonId();
 };
 
 export { StartFunc };

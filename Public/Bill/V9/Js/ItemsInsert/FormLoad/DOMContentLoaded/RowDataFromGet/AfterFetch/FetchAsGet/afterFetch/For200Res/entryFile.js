@@ -1,7 +1,7 @@
 let StartFunc = ({ inResponseAsJson }) => {
-    var $table = $('#table');
+  var $table = $("#table");
 
-    $table.bootstrapTable("load", inResponseAsJson);
+  $table.bootstrapTable("load", inResponseAsJson);
 };
 
 export { StartFunc };

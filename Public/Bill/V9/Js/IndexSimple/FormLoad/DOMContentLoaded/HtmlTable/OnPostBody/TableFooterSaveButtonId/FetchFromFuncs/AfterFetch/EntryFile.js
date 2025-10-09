@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    window.location.reload();
+  window.location.reload();
 };
 
 export { StartFunc };

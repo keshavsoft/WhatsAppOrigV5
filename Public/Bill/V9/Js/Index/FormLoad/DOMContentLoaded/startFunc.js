@@ -6,11 +6,11 @@ import { StartFunc as StartFuncFromToDataList } from "./ToDataList/entryFile.js"
 import { StartFunc as StartFuncFromShowOnDom } from "./ShowOnDom/entryFile.js";
 
 const StartFunc = () => {
-    StartFuncFromHtmlTable();
-    StartFuncAddListeners();
-    StartFuncFromShowOnDom();
-    StartFuncFromAddListenersForHeading();
-    StartFuncFromToDataList();
+  StartFuncFromHtmlTable();
+  StartFuncAddListeners();
+  StartFuncFromShowOnDom();
+  StartFuncFromAddListenersForHeading();
+  StartFuncFromToDataList();
 };
 
 export { StartFunc };

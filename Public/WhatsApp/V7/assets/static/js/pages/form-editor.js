@@ -1,9 +1,9 @@
 var snow = new Quill("#snow", {
   theme: "snow",
-})
+});
 var bubble = new Quill("#bubble", {
   theme: "bubble",
-})
+});
 new Quill("#full", {
   bounds: "#full-container .editor",
   modules: {
@@ -24,4 +24,4 @@ new Quill("#full", {
     ],
   },
   theme: "snow",
-})
+});

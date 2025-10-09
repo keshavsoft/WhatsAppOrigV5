@@ -1,7 +1,7 @@
-import KeysJson from './keys.json' with {type: 'json'};
+import KeysJson from "./keys.json" with { type: "json" };
 
 let StartFunc = () => {
-    return KeysJson;
+  return KeysJson;
 };
 
-export { StartFunc }
+export { StartFunc };

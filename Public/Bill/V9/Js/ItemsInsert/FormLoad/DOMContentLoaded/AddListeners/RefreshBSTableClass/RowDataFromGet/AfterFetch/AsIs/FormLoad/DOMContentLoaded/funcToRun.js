@@ -3,9 +3,9 @@ import { StartFunc as StartFuncFromBuildBSTables } from "./BuildBSTables/entryFi
 import { StartFunc as StartFuncFromShowOnDom } from "./showOnDom.js";
 
 let StartFunc = () => {
-    StartFuncFromAddListeners();
-    StartFuncFromBuildBSTables();
-    StartFuncFromShowOnDom();
+  StartFuncFromAddListeners();
+  StartFuncFromBuildBSTables();
+  StartFuncFromShowOnDom();
 };
 
 export { StartFunc };

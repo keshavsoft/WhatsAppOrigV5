@@ -7,7 +7,7 @@ var chartColors = {
   blue: "#3245D1",
   purple: "rgb(153, 102, 255)",
   grey: "#EBEFF6",
-}
+};
 
 var config1 = {
   type: "line",
@@ -76,7 +76,7 @@ var config1 = {
       ],
     },
   },
-}
+};
 var config2 = {
   type: "line",
   data: {
@@ -144,7 +144,7 @@ var config2 = {
       ],
     },
   },
-}
+};
 var config3 = {
   type: "line",
   data: {
@@ -213,7 +213,7 @@ var config3 = {
       ],
     },
   },
-}
+};
 var config4 = {
   type: "line",
   data: {
@@ -282,9 +282,9 @@ var config4 = {
       ],
     },
   },
-}
+};
 
-var ctxBar = document.getElementById("bar").getContext("2d")
+var ctxBar = document.getElementById("bar").getContext("2d");
 var myBar = new Chart(ctxBar, {
   type: "bar",
   data: {
@@ -338,15 +338,15 @@ var myBar = new Chart(ctxBar, {
       ],
     },
   },
-})
-var line = document.getElementById("line").getContext("2d")
-var gradient = line.createLinearGradient(0, 0, 0, 400)
-gradient.addColorStop(0, "rgba(50, 69, 209,1)")
-gradient.addColorStop(1, "rgba(265, 177, 249,0)")
+});
+var line = document.getElementById("line").getContext("2d");
+var gradient = line.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, "rgba(50, 69, 209,1)");
+gradient.addColorStop(1, "rgba(265, 177, 249,0)");
 
-var gradient2 = line.createLinearGradient(0, 0, 0, 400)
-gradient2.addColorStop(0, "rgba(255, 91, 92,1)")
-gradient2.addColorStop(1, "rgba(265, 177, 249,0)")
+var gradient2 = line.createLinearGradient(0, 0, 0, 400);
+gradient2.addColorStop(0, "rgba(255, 91, 92,1)");
+gradient2.addColorStop(1, "rgba(265, 177, 249,0)");
 
 var myline = new Chart(line, {
   type: "line",
@@ -433,7 +433,7 @@ var myline = new Chart(line, {
       ],
     },
   },
-})
+});
 
 // let ctx1 = document.getElementById("canvas1").getContext("2d");
 // let ctx2 = document.getElementById("canvas2").getContext("2d");
