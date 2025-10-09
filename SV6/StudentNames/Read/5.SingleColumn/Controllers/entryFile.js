@@ -1,23 +1,19 @@
-import {
-    postDefaultFunc as postDefaultFuncFromRepo
-} from '../Repos/entryFile.js';
+import { postDefaultFunc as postDefaultFuncFromRepo } from "../Repos/entryFile.js";
 
 let postFilterDataFromBodyFunc = (req, res) => {
-    let LocalColumnName = req.params.ColumnName;
+  let LocalColumnName = req.params.ColumnName;
 
-    let LocalFromRepo = postDefaultFuncFromRepo({
-        inColumnName: LocalColumnName
-    });
+  let LocalFromRepo = postDefaultFuncFromRepo({
+    inColumnName: LocalColumnName,
+  });
 
-    if (LocalFromRepo.KTF === false) {
-        res.status(409).send(LocalFromRepo.KReason);
-        return;
-    };
+  if (LocalFromRepo.KTF === false) {
+    res.status(409).send(LocalFromRepo.KReason);
+    return;
+  }
 
-    res.set('Content-Type', 'application/json');
-    res.send(LocalFromRepo.JsonData);
+  res.set("Content-Type", "application/json");
+  res.send(LocalFromRepo.JsonData);
 };
 
-export {
-    postFilterDataFromBodyFunc
-};
+export { postFilterDataFromBodyFunc };

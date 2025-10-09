@@ -1,11 +1,9 @@
-import { StartFunc as StartFuncFromReadSelColumns } from '../KFs/readSelColumns.js';
+import { StartFunc as StartFuncFromReadSelColumns } from "../KFs/readSelColumns.js";
 
 let postDefaultFunc = ({ inColumnName }) => {
-    let LocalFromLowDb = StartFuncFromReadSelColumns({ inColumnName });
+  let LocalFromLowDb = StartFuncFromReadSelColumns({ inColumnName });
 
-    return LocalFromLowDb;
+  return LocalFromLowDb;
 };
 
-export {
-    postDefaultFunc
-};
+export { postDefaultFunc };

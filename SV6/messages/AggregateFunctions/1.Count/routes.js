@@ -1,10 +1,10 @@
-import express from 'express';
+import express from "express";
 
 const router = express.Router();
 
-import { GetFunc } from './Controllers/entryFile.js'; // Import the controller function
+import { GetFunc } from "./Controllers/entryFile.js"; // Import the controller function
 
 // Define the route for the Count endpoint
-router.get('/', GetFunc);
+router.get("/", GetFunc);
 
 export { router };

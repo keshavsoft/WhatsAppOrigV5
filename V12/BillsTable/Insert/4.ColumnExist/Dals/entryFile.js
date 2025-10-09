@@ -1,11 +1,23 @@
-import { StartFunc as StartFuncFromInsertToFile } from '../KFs/insertToFile.js';
+import { StartFunc as StartFuncFromInsertToFile } from "../KFs/insertToFile.js";
 
-let postDefaultFunc = ({LocalCoumnBuyerName,LocalCoumnBuyerAddress,LocalCoumnBuyerGST,LocalCoumnInvoiceNo,LocalCoumnInvoiceDate,LocalCoumnInvoiceStateCode}) => {
-    let LocalFromLowDb = StartFuncFromInsertToFile({LocalCoumnBuyerName,LocalCoumnBuyerAddress,LocalCoumnBuyerGST,LocalCoumnInvoiceNo,LocalCoumnInvoiceDate,LocalCoumnInvoiceStateCode});
+let postDefaultFunc = ({
+  LocalCoumnBuyerName,
+  LocalCoumnBuyerAddress,
+  LocalCoumnBuyerGST,
+  LocalCoumnInvoiceNo,
+  LocalCoumnInvoiceDate,
+  LocalCoumnInvoiceStateCode,
+}) => {
+  let LocalFromLowDb = StartFuncFromInsertToFile({
+    LocalCoumnBuyerName,
+    LocalCoumnBuyerAddress,
+    LocalCoumnBuyerGST,
+    LocalCoumnInvoiceNo,
+    LocalCoumnInvoiceDate,
+    LocalCoumnInvoiceStateCode,
+  });
 
-    return LocalFromLowDb;
+  return LocalFromLowDb;
 };
 
-export {
-    postDefaultFunc
-};
+export { postDefaultFunc };

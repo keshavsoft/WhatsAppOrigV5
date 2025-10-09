@@ -1,8 +1,8 @@
-import express from 'express';
+import express from "express";
 const router = express.Router();
 
-import { GetAverageFunc } from '../Controllers/entryFile.js';
+import { GetAverageFunc } from "../Controllers/entryFile.js";
 
-router.get('/:columnName', GetAverageFunc);
+router.get("/:columnName", GetAverageFunc);
 
 export { router };

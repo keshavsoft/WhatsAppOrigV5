@@ -1,6 +1,6 @@
 import fs from "fs";
 
-import ParamsJson from '../../../../CommonFuncs/params.json' with {type: 'json'};
+import ParamsJson from "../../../../CommonFuncs/params.json" with { type: "json" };
 
 const StartFunc = ({ inRowIndex, inKeyName, inRequestBody }) => {
   const LocalFileName = ParamsJson.TableName;
@@ -16,18 +16,18 @@ const StartFunc = ({ inRowIndex, inKeyName, inRequestBody }) => {
 
   try {
     if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      let LocalRow = data.find(element => element.pk == LocalRowIndex);
+      const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      let LocalRow = data.find((element) => element.pk == LocalRowIndex);
 
       if (!LocalRow) {
-        LocalReturnObject.KReason = `No Row Data ${LocalRowIndex}.`
+        LocalReturnObject.KReason = `No Row Data ${LocalRowIndex}.`;
         return LocalReturnObject;
-      };
+      }
 
       if (Array.isArray(LocalRow[LocalKeyName])) {
         LocalReturnObject.KReason = `${LocalKeyName} Key Not Obj SubTable`;
         return LocalReturnObject;
-      };
+      }
       let LocalArrayPk = Object.keys(LocalRow[LocalKeyName]);
 
       let LocalRemoveUndefined = LocalArrayPk.filter(function (element) {
@@ -37,10 +37,14 @@ const StartFunc = ({ inRowIndex, inKeyName, inRequestBody }) => {
       let numberArray = LocalRemoveUndefined.map(Number);
       let MaxPk = Math.max(...numberArray, 0) + 1;
 
-      let LocalInsertData = { ...LocalinDataToInsert, pk: MaxPk, Fk: LocalRowIndex };
-      LocalRow[LocalKeyName][MaxPk] = (LocalInsertData)
+      let LocalInsertData = {
+        ...LocalinDataToInsert,
+        pk: MaxPk,
+        Fk: LocalRowIndex,
+      };
+      LocalRow[LocalKeyName][MaxPk] = LocalInsertData;
 
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
 
       LocalReturnObject.KTF = true;
       LocalReturnObject.SuccessText = `Inserted pk ${MaxPk} In To ${LocalKeyName} File: ${LocalFileName}.json successfully`;
@@ -51,10 +55,10 @@ const StartFunc = ({ inRowIndex, inKeyName, inRequestBody }) => {
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
-    };
+    }
   } catch (err) {
-    console.error('Error:', err);
-  };
+    console.error("Error:", err);
+  }
 
   return LocalReturnObject;
 };

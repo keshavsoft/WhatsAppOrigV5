@@ -1,1 +1,6 @@
-{"TableName":"messages","DataPath":"Data","Columns":[],"ColumnsWithSchema":[]}
+{
+  "TableName": "messages",
+  "DataPath": "Data",
+  "Columns": [],
+  "ColumnsWithSchema": []
+}

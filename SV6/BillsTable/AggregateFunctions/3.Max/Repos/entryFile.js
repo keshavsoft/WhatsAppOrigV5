@@ -1,7 +1,7 @@
-import { GetFunc as GetFuncDal } from '../dals/entryFile.js';
+import { GetFunc as GetFuncDal } from "../dals/entryFile.js";
 
 let GetFunc = () => {
-    return GetFuncDal();
+  return GetFuncDal();
 };
 
 export { GetFunc };

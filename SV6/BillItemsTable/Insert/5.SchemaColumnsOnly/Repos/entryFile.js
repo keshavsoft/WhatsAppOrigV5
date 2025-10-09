@@ -1,13 +1,9 @@
-import {
-    postDefaultFunc as postDefaultFuncFromDal
-} from '../Dals/entryFile.js';
+import { postDefaultFunc as postDefaultFuncFromDal } from "../Dals/entryFile.js";
 
 let postDefaultFunc = ({}) => {
-    let LocalFromDal = postDefaultFuncFromDal({});
+  let LocalFromDal = postDefaultFuncFromDal({});
 
-    return LocalFromDal;
+  return LocalFromDal;
 };
 
-export {
-    postDefaultFunc
-};
+export { postDefaultFunc };

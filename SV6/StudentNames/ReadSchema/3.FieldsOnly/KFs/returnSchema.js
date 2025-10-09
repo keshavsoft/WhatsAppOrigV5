@@ -1,13 +1,13 @@
 import fs from "fs";
 
-import ParamsJson from '../../../CommonFuncs/params.json' with {type: 'json'};
+import ParamsJson from "../../../CommonFuncs/params.json" with { type: "json" };
 
 let StartFunc = () => {
-    let LocalReturnData = {};
-    LocalReturnData.KTF = true;
-    LocalReturnData.JsonData = ParamsJson.Columns;
+  let LocalReturnData = {};
+  LocalReturnData.KTF = true;
+  LocalReturnData.JsonData = ParamsJson.Columns;
 
-    return LocalReturnData;
+  return LocalReturnData;
 };
 
 export { StartFunc };

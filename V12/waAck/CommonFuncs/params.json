@@ -1,1 +1,6 @@
-{"TableName":"waAck","DataPath":"Data","Columns":[],"ColumnsWithSchema":[]}
+{
+  "TableName": "waAck",
+  "DataPath": "Data",
+  "Columns": [],
+  "ColumnsWithSchema": []
+}

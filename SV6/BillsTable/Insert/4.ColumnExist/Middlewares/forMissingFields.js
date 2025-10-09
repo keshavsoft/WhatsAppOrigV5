@@ -7,14 +7,16 @@ const StartFunc = ({ inRequestBody, inColumnsArray }) => {
 
   const bodyKeys = Object.keys(LocalBody);
 
-  const missingKeys = LocalColumnsAsArray.filter(key => !bodyKeys.includes(key));
+  const missingKeys = LocalColumnsAsArray.filter(
+    (key) => !bodyKeys.includes(key),
+  );
 
   if (missingKeys.length > 0) {
     LocalReturnObject.KTF = true;
     LocalReturnObject.KReason = `Add missing field(s): ${missingKeys.join(", ")}`;
 
     return LocalReturnObject;
-  };
+  }
 
   return LocalReturnObject;
 };

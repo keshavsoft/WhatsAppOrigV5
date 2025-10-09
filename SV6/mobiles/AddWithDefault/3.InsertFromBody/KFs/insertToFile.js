@@ -1,5 +1,5 @@
 import fs from "fs";
-import ParamsJson from '../../../CommonFuncs/params.json' with { type: 'json' };
+import ParamsJson from "../../../CommonFuncs/params.json" with { type: "json" };
 
 const StartFunc = ({ inValue, inKey }) => {
   const LocalFileName = ParamsJson.TableName;
@@ -23,16 +23,18 @@ const StartFunc = ({ inValue, inKey }) => {
 
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-    let LocalArrayPk = data.map(element => element.pk).filter(el => el !== undefined);
+    let LocalArrayPk = data
+      .map((element) => element.pk)
+      .filter((el) => el !== undefined);
     let numberArray = LocalArrayPk.map(Number);
     let MaxPk = Math.max(...numberArray, 0) + 1;
 
     let LocalInsertData = {};
-    schemaColumns.forEach(col => {
+    schemaColumns.forEach((col) => {
       if (col === inKey) {
         LocalInsertData[col] = inValue;
       } else {
-        LocalInsertData[col] = {};   
+        LocalInsertData[col] = {};
       }
     });
 
@@ -47,7 +49,6 @@ const StartFunc = ({ inValue, inKey }) => {
     LocalReturnObject.Data = LocalInsertData;
 
     return LocalReturnObject;
-
   } catch (err) {
     console.error("Error:", err);
     LocalReturnObject.KReason = err.message;

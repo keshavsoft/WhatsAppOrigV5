@@ -1,11 +1,9 @@
-import { StartFunc as StartFuncFromDeleteFromFile } from '../KFs/deleteFromFile.js';
+import { StartFunc as StartFuncFromDeleteFromFile } from "../KFs/deleteFromFile.js";
 
 let postDefaultFunc = ({ inKey }) => {
-    let LocalFromLowDb = StartFuncFromDeleteFromFile({ inKey });
+  let LocalFromLowDb = StartFuncFromDeleteFromFile({ inKey });
 
-    return LocalFromLowDb;
+  return LocalFromLowDb;
 };
 
-export {
-    postDefaultFunc
-};
+export { postDefaultFunc };

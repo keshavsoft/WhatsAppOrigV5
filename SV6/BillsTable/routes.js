@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 
 const router = express.Router();
 
@@ -25,7 +25,7 @@ router.use("/ReadSchema", routerFromReadSchema);
 router.use("/GroupBy", routerFromGroupBy);
 router.use("/AggregateFunctions", routerFromAggregateFunctions);
 
-router.use("/SubTable", routerFromSubTable);//Sub Table CRUD
+router.use("/SubTable", routerFromSubTable); //Sub Table CRUD
 router.use("/Filter", routerFromFilter);
 router.use("/AddWithDefault", routerFromAddWithDefault);
 router.use("/SubTableOnArray", routerFromSubTableOnArray);

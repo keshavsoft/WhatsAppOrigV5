@@ -1,7 +1,7 @@
-import { StartFunc as StartFuncFromReadFromFile } from '../KFs/readFromFile.js';
+import { StartFunc as StartFuncFromReadFromFile } from "../KFs/readFromFile.js";
 
 let GetFunc = () => {
-    return StartFuncFromReadFromFile();
+  return StartFuncFromReadFromFile();
 };
 
 export { GetFunc };

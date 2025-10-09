@@ -1,1 +1,6 @@
-{"TableName":"mobiles","DataPath":"Data","Columns":[],"ColumnsWithSchema":[]}
+{
+  "TableName": "mobiles",
+  "DataPath": "Data",
+  "Columns": [],
+  "ColumnsWithSchema": []
+}

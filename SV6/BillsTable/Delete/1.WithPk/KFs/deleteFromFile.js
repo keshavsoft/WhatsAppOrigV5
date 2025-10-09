@@ -1,9 +1,9 @@
 import fs from "fs";
-import ParamsJson from '../../../CommonFuncs/params.json' with {type: 'json'};
+import ParamsJson from "../../../CommonFuncs/params.json" with { type: "json" };
 
 const StartFunc = ({ inKey }) => {
   const LocalFileName = ParamsJson.TableName;
-    const LocalDataPath = ParamsJson.DataPath;
+  const LocalDataPath = ParamsJson.DataPath;
 
   let LocalReturnObject = { KTF: false };
 
@@ -18,7 +18,7 @@ const StartFunc = ({ inKey }) => {
 
     let data = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-    const LocalFindIndex = data.findIndex(e => e.pk === parseInt(inKey));
+    const LocalFindIndex = data.findIndex((e) => e.pk === parseInt(inKey));
 
     if (LocalFindIndex === -1) {
       LocalReturnObject.KReason = `Not found data with pk:${inKey}.`;
@@ -27,10 +27,10 @@ const StartFunc = ({ inKey }) => {
 
     data.splice(LocalFindIndex, 1);
 
-    data = data.map(item =>
+    data = data.map((item) =>
       Object.fromEntries(
-        Object.entries(item).filter(([key, value]) => value !== null)
-      )
+        Object.entries(item).filter(([key, value]) => value !== null),
+      ),
     );
 
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");

@@ -1,9 +1,9 @@
-import express from 'express';
+import express from "express";
 
 var router = express.Router();
 
-import { router as routergetFuncs } from './Routes/entryFile.js';
+import { router as routergetFuncs } from "./Routes/entryFile.js";
 
-router.use('/', routergetFuncs);
+router.use("/", routergetFuncs);
 
 export { router };

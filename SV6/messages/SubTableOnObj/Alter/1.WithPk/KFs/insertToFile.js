@@ -2,7 +2,6 @@ import { StartFunc as StartFuncFileRead } from "../../../../CommonFuncs/fileRead
 import { StartFunc as StartFuncfileWrite } from "../../../../CommonFuncs/fileWrite.js";
 
 const StartFunc = ({ inPk, inBody, inRowPk, inKeyName }) => {
-
   let LocalReturnObject = { KTF: false };
 
   let LocalFileRead = StartFuncFileRead();
@@ -10,12 +9,11 @@ const StartFunc = ({ inPk, inBody, inRowPk, inKeyName }) => {
   if (LocalFileRead.KTF === false) {
     LocalReturnObject = { ...LocalFileRead };
     return LocalReturnObject;
-  };
+  }
 
   let LocalData = LocalFileRead.JsonData;
 
   try {
-
     const indexToFind = LocalData.findIndex((e) => e.pk === Number(inRowPk));
 
     if (indexToFind === -1) {
@@ -26,14 +24,17 @@ const StartFunc = ({ inPk, inBody, inRowPk, inKeyName }) => {
     if (Array.isArray(LocalData[indexToFind][inKeyName])) {
       LocalReturnObject.KReason = `${inKeyName} Key Not Obj SubTable`;
       return LocalReturnObject;
-    };
+    }
 
     if (!(inPk in LocalData[indexToFind][inKeyName])) {
       LocalReturnObject.KReason = `${inPk} Key Not found !`;
       return LocalReturnObject;
-    };
+    }
 
-    let LocalUpdateData = { ...LocalData[indexToFind][inKeyName][inPk], ...inBody };
+    let LocalUpdateData = {
+      ...LocalData[indexToFind][inKeyName][inPk],
+      ...inBody,
+    };
 
     LocalData[indexToFind][inKeyName][inPk] = LocalUpdateData;
 
@@ -42,7 +43,7 @@ const StartFunc = ({ inPk, inBody, inRowPk, inKeyName }) => {
     if (LocalUpdate.KTF === false) {
       LocalReturnObject = { ...LocalUpdate };
       return LocalReturnObject;
-    };
+    }
 
     LocalReturnObject.KTF = true;
     LocalReturnObject.JsonData = `Record updated successfully with pk :'${inRowPk} KeyName :${inKeyName}, Subpk :${inPk} '.`;

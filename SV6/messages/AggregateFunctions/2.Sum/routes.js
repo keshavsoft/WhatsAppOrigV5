@@ -1,8 +1,8 @@
-import express from 'express';
+import express from "express";
 const router = express.Router();
 
-import { router as routerFromMin } from './Routes/entryFile.js';
+import { router as routerFromMin } from "./Routes/entryFile.js";
 
-router.use('/', routerFromMin);  // mounts at /Min/:columnName
+router.use("/", routerFromMin); // mounts at /Min/:columnName
 
 export { router };

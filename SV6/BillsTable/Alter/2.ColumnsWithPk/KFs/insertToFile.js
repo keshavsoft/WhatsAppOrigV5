@@ -1,5 +1,5 @@
 import fs from "fs";
-import ParamsJson from '../../../CommonFuncs/params.json' with {type: 'json'};
+import ParamsJson from "../../../CommonFuncs/params.json" with { type: "json" };
 
 const StartFunc = ({ inPk, inBody }) => {
   const LocalFileName = ParamsJson.TableName;
@@ -16,7 +16,6 @@ const StartFunc = ({ inPk, inBody }) => {
 
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     const indexToUpdate = data.findIndex((e) => e.pk === Number(inPk));
-
 
     if (indexToUpdate === -1) {
       LocalReturnObject.KReason = `Record not found with pk:'${inPk}'.`;

@@ -16,7 +16,10 @@ const StartFunc = ({ inRequestBody }) => {
     }
 
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    const existingPKs = data.map(({ pk }) => pk).filter(pk => pk !== undefined).map(Number);
+    const existingPKs = data
+      .map(({ pk }) => pk)
+      .filter((pk) => pk !== undefined)
+      .map(Number);
     let currentMaxPk = Math.max(...existingPKs, 0);
 
     const insertedPKs = [];
@@ -34,7 +37,6 @@ const StartFunc = ({ inRequestBody }) => {
     LocalReturnObject.SuccessText = `Inserted ${insertedPKs.length} items with PKs [${insertedPKs.join(", ")}] into ${LocalFileName}.json successfully`;
 
     return LocalReturnObject;
-
   } catch (err) {
     console.error("Error:", err);
     LocalReturnObject.KReason = "Exception occurred during insertion.";

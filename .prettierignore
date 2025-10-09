@@ -6,14 +6,16 @@ build/
 # Large data/generated content
 Data/**
 SV5/**
-SV6/**
 V9/**
 V10/**
 V11/**
-V12/**
 
 # Huge public/versioned asset trees
 Public/**/V*/
++!Public/Bill/V9
++!Public/Bill/V9/**
++!Public/Chat/V12
++!Public/Chat/V12/**
 Public/V7/connectedClients/
 Public/V7/messages/
 Public/V7/mobiles/

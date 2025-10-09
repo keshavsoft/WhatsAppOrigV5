@@ -1,13 +1,23 @@
-import {
-    postDefaultFunc as postDefaultFuncFromDal
-} from '../Dals/entryFile.js';
+import { postDefaultFunc as postDefaultFuncFromDal } from "../Dals/entryFile.js";
 
-let postDefaultFunc = ({LocalCoumnBuyerName,LocalCoumnBuyerAddress,LocalCoumnBuyerGST,LocalCoumnInvoiceNo,LocalCoumnInvoiceDate,LocalCoumnInvoiceStateCode}) => {
-    let LocalFromDal = postDefaultFuncFromDal({LocalCoumnBuyerName,LocalCoumnBuyerAddress,LocalCoumnBuyerGST,LocalCoumnInvoiceNo,LocalCoumnInvoiceDate,LocalCoumnInvoiceStateCode});
+let postDefaultFunc = ({
+  LocalCoumnBuyerName,
+  LocalCoumnBuyerAddress,
+  LocalCoumnBuyerGST,
+  LocalCoumnInvoiceNo,
+  LocalCoumnInvoiceDate,
+  LocalCoumnInvoiceStateCode,
+}) => {
+  let LocalFromDal = postDefaultFuncFromDal({
+    LocalCoumnBuyerName,
+    LocalCoumnBuyerAddress,
+    LocalCoumnBuyerGST,
+    LocalCoumnInvoiceNo,
+    LocalCoumnInvoiceDate,
+    LocalCoumnInvoiceStateCode,
+  });
 
-    return LocalFromDal;
+  return LocalFromDal;
 };
 
-export {
-    postDefaultFunc
-};
+export { postDefaultFunc };

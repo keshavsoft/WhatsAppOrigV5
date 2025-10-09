@@ -1,6 +1,6 @@
 import fs from "fs";
 
-import ParamsJson from '../../../CommonFuncs/params.json' with {type: 'json'};
+import ParamsJson from "../../../CommonFuncs/params.json" with { type: "json" };
 
 const StartFunc = ({ inRequestBody }) => {
   const LocalFileName = ParamsJson.TableName;
@@ -14,12 +14,12 @@ const StartFunc = ({ inRequestBody }) => {
 
   try {
     if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      
-      let LocalInsertData = { ...LocalinDataToInsert};
+      const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+      let LocalInsertData = { ...LocalinDataToInsert };
       data.push(LocalInsertData);
 
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
 
       LocalReturnObject.KTF = true;
       LocalReturnObject.SuccessText = `Inserted ${LocalFileName}.json successfully`;
@@ -30,10 +30,10 @@ const StartFunc = ({ inRequestBody }) => {
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
-    };
+    }
   } catch (err) {
-    console.error('Error:', err);
-  };
+    console.error("Error:", err);
+  }
 
   return LocalReturnObject;
 };

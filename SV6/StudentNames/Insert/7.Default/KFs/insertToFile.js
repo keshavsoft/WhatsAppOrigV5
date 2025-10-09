@@ -1,13 +1,13 @@
 import fs from "fs";
 
-import ParamsJson from '../../../CommonFuncs/params.json' with {type: 'json'};
+import ParamsJson from "../../../CommonFuncs/params.json" with { type: "json" };
 
 const StartFunc = ({ inRequestBody }) => {
   const LocalFileName = ParamsJson.TableName;
   const LocalDataPath = ParamsJson.DataPath;
 
-  let LocalinDataToInsert = {}
-  inRequestBody.map(item => {
+  let LocalinDataToInsert = {};
+  inRequestBody.map((item) => {
     LocalinDataToInsert[item] = {};
   });
 
@@ -17,8 +17,8 @@ const StartFunc = ({ inRequestBody }) => {
 
   try {
     if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      let LocalArrayPk = data.map(element => element.pk);
+      const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      let LocalArrayPk = data.map((element) => element.pk);
 
       let LocalRemoveUndefined = LocalArrayPk.filter(function (element) {
         return element !== undefined;
@@ -30,12 +30,12 @@ const StartFunc = ({ inRequestBody }) => {
       let LocalInsertData = {
         ...LocalinDataToInsert,
         pk: MaxPk,
-        ServerInsertedTimeStamp: new Date()
+        ServerInsertedTimeStamp: new Date(),
       };
 
       data.push(LocalInsertData);
 
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
 
       LocalReturnObject.KTF = true;
       LocalReturnObject.SuccessText = `Inserted pk ${MaxPk} In To ${LocalFileName}.json successfully`;
@@ -46,10 +46,10 @@ const StartFunc = ({ inRequestBody }) => {
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
-    };
+    }
   } catch (err) {
-    console.error('Error:', err);
-  };
+    console.error("Error:", err);
+  }
 
   return LocalReturnObject;
 };
