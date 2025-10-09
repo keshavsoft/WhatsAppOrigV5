@@ -3,17 +3,17 @@ import { StartFunc as StartFuncFromSendWA } from "./sendToWA.js";
 import { StartFunc as StartFuncFromInsertAckToFile } from "./insertAckToFile.js";
 
 const StartFunc = async ({ inPk }) => {
-    await StartFuncFromGeneratePdf({ inPk });
-    
-    const LocalFromSendWa = await StartFuncFromSendWA({ inPk });
-    
-    // const LocalFromSendWa = undefined;
+  await StartFuncFromGeneratePdf({ inPk });
 
-    if (LocalFromSendWa === undefined) {
-        return false;
-    };
+  const LocalFromSendWa = await StartFuncFromSendWA({ inPk });
 
-    return StartFuncFromInsertAckToFile({ inPk, inAckId: LocalFromSendWa });
+  // const LocalFromSendWa = undefined;
+
+  if (LocalFromSendWa === undefined) {
+    return false;
+  }
+
+  return StartFuncFromInsertAckToFile({ inPk, inAckId: LocalFromSendWa });
 };
 
 export { StartFunc };

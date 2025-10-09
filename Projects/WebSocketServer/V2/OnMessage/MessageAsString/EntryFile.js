@@ -14,69 +14,101 @@ import { StartFunc as StartFuncFromReturnWhoAmI } from "./returnWhoAmI.js";
 import { StartFunc as StartFuncfromFullChat } from "./fullChat.js";
 import { StartFunc as StartFuncFromChatIn } from "./chatIn.js";
 
-let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
-    let LocalDataAsSting = inDataAsString;
-    // console.log("LocalDataAsSting : ", LocalDataAsSting);
+let StartFunc = ({
+  inDataAsString,
+  inws,
+  inClients,
+  inChatLog,
+  inSendFunc,
+}) => {
+  let LocalDataAsSting = inDataAsString;
+  // console.log("LocalDataAsSting : ", LocalDataAsSting);
 
-    if (LocalDataAsSting === "returnWhoAmI") {
-        StartFuncFromReturnWhoAmI({ inDataAsString: LocalDataAsSting, inws: inws, inClients, inSendFunc });
-    };
+  if (LocalDataAsSting === "returnWhoAmI") {
+    StartFuncFromReturnWhoAmI({
+      inDataAsString: LocalDataAsSting,
+      inws: inws,
+      inClients,
+      inSendFunc,
+    });
+  }
 
-    if (LocalDataAsSting === "returnOnlineClients") {
-        StartFuncreturnOnlineClients({ inDataAsString: LocalDataAsSting, inClients, inSendFunc });
-    };
+  if (LocalDataAsSting === "returnOnlineClients") {
+    StartFuncreturnOnlineClients({
+      inDataAsString: LocalDataAsSting,
+      inClients,
+      inSendFunc,
+    });
+  }
 
-    if (LocalDataAsSting === "GetWebSocketId") {
-        StartFuncGetWebSocketId({ inDataAsString: LocalDataAsSting, inws, inClients, inSendFunc });
-    };
+  if (LocalDataAsSting === "GetWebSocketId") {
+    StartFuncGetWebSocketId({
+      inDataAsString: LocalDataAsSting,
+      inws,
+      inClients,
+      inSendFunc,
+    });
+  }
 
-    if (LocalDataAsSting === "returnOnlineClientsWOMe") {
-        StartFuncreturnOnlineClientsWOMe({ inDataAsString: LocalDataAsSting, inws: inws, inClients: inClients });
-    };
+  if (LocalDataAsSting === "returnOnlineClientsWOMe") {
+    StartFuncreturnOnlineClientsWOMe({
+      inDataAsString: LocalDataAsSting,
+      inws: inws,
+      inClients: inClients,
+    });
+  }
 
-    if (LocalDataAsSting === "myChat") {
-        myChat({ inChatLog, inws: inws, inClients: inClients });
-    };
+  if (LocalDataAsSting === "myChat") {
+    myChat({ inChatLog, inws: inws, inClients: inClients });
+  }
 
-    if (LocalDataAsSting === "myPhone") {
-        myPhone({ inSendFunc });
-    };
+  if (LocalDataAsSting === "myPhone") {
+    myPhone({ inSendFunc });
+  }
 
-    if (LocalDataAsSting === "WAProfile") {
-        wAProfile({ inSendFunc, inws });
-    };
+  if (LocalDataAsSting === "WAProfile") {
+    wAProfile({ inSendFunc, inws });
+  }
 
-    if (LocalDataAsSting === "GetQrCode") {
-        StartFuncFromGetQrCode({ inSendFunc, inws });
-    };
+  if (LocalDataAsSting === "GetQrCode") {
+    StartFuncFromGetQrCode({ inSendFunc, inws });
+  }
 
-    if (LocalDataAsSting === "StartWA") {
-        StartFuncStartWA().then();
-    };
+  if (LocalDataAsSting === "StartWA") {
+    StartFuncStartWA().then();
+  }
 
-    if (LocalDataAsSting === "StopWA") {
-        StartFuncStopWA({ inws });
-    };
+  if (LocalDataAsSting === "StopWA") {
+    StartFuncStopWA({ inws });
+  }
 
-    if (LocalDataAsSting === "WAReadAllChats") {
-        StartFuncFromWAReadAllChats({ inws });
-    };
+  if (LocalDataAsSting === "WAReadAllChats") {
+    StartFuncFromWAReadAllChats({ inws });
+  }
 
-    if (LocalDataAsSting.startsWith('WAReadFrom')) {
-        const LocalFromNumber = LocalDataAsSting.split('@')[1];
+  if (LocalDataAsSting.startsWith("WAReadFrom")) {
+    const LocalFromNumber = LocalDataAsSting.split("@")[1];
 
-        StartFuncFromReadFromSingleNumber({ inws, inFromNumber: LocalFromNumber });
-    };
+    StartFuncFromReadFromSingleNumber({ inws, inFromNumber: LocalFromNumber });
+  }
 
-    if (LocalDataAsSting === "fullChat") {
-        StartFuncfromFullChat({ inDataAsString: LocalDataAsSting, inClients, inSendFunc });
-    };
+  if (LocalDataAsSting === "fullChat") {
+    StartFuncfromFullChat({
+      inDataAsString: LocalDataAsSting,
+      inClients,
+      inSendFunc,
+    });
+  }
 
-    if (LocalDataAsSting === "ChatIn") {
-        StartFuncFromChatIn({ inDataAsString: LocalDataAsSting, inClients, inSendFunc });
-    }
+  if (LocalDataAsSting === "ChatIn") {
+    StartFuncFromChatIn({
+      inDataAsString: LocalDataAsSting,
+      inClients,
+      inSendFunc,
+    });
+  }
 
-    StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
+  StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
 };
 
 export { StartFunc };

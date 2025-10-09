@@ -1,9 +1,9 @@
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
 let StartFunc = ({ inObject }) => {
-    var token = jwt.sign(inObject, 'KeshavSoft');
+  var token = jwt.sign(inObject, "KeshavSoft");
 
-    return token;
+  return token;
 };
 
 export { StartFunc };

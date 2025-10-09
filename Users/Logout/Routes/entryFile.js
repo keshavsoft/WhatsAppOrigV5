@@ -1,11 +1,9 @@
-import express from 'express';
+import express from "express";
 
 var router = express.Router();
 
-import {
-    postFilterDataFromBodyFunc
-} from '../Controllers/entryFile.js';
+import { postFilterDataFromBodyFunc } from "../Controllers/entryFile.js";
 
-router.get('/', postFilterDataFromBodyFunc);
+router.get("/", postFilterDataFromBodyFunc);
 
 export { router };

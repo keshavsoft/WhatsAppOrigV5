@@ -1,10 +1,10 @@
 let StartFunc = ({ inDataAsString, inws, inClients }) => {
-    let LocalArray = []
+  let LocalArray = [];
 
-    for (let [key, value] of inClients) {
-        LocalArray.push(value);
-    };
+  for (let [key, value] of inClients) {
+    LocalArray.push(value);
+  }
 
-    inws.send(JSON.stringify({ Type: 'returnOnlineClients', res: LocalArray }));
-}
+  inws.send(JSON.stringify({ Type: "returnOnlineClients", res: LocalArray }));
+};
 export { StartFunc };

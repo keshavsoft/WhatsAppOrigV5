@@ -1,9 +1,9 @@
 const clients = new Map();
 
 const ReadFunc = () => {
-    console.log("clients : ", clients.size);
+  console.log("clients : ", clients.size);
 
-    return clients;
+  return clients;
 };
 
 export { ReadFunc };

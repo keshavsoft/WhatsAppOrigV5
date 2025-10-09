@@ -4,24 +4,16 @@
     "name": "checkMail",
     "src": "HtmlFiles/checkMail.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill-B5Qt9EMX.js"
-    ],
-    "assets": [
-      "assets/Animation-IZ8_7UOj.gif"
-    ]
+    "imports": ["_modulepreload-polyfill-B5Qt9EMX.js"],
+    "assets": ["assets/Animation-IZ8_7UOj.gif"]
   },
   "HtmlFiles/registerForInterns.html": {
     "file": "assets/registerForInterns-BV9lOwkQ.js",
     "name": "registerForInterns",
     "src": "HtmlFiles/registerForInterns.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill-B5Qt9EMX.js"
-    ],
-    "css": [
-      "assets/style-CkM8oOZw.css"
-    ],
+    "imports": ["_modulepreload-polyfill-B5Qt9EMX.js"],
+    "css": ["assets/style-CkM8oOZw.css"],
     "assets": [
       "assets/favicon-DcIgDO7J.png",
       "assets/apple-touch-icon-Ou6JeAuw.png"
@@ -32,12 +24,8 @@
     "name": "registerV2",
     "src": "HtmlFiles/registerV2.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill-B5Qt9EMX.js"
-    ],
-    "css": [
-      "assets/style-CkM8oOZw.css"
-    ],
+    "imports": ["_modulepreload-polyfill-B5Qt9EMX.js"],
+    "css": ["assets/style-CkM8oOZw.css"],
     "assets": [
       "assets/favicon-DcIgDO7J.png",
       "assets/apple-touch-icon-Ou6JeAuw.png"
@@ -48,12 +36,8 @@
     "name": "registerV3",
     "src": "HtmlFiles/registerV3.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill-B5Qt9EMX.js"
-    ],
-    "css": [
-      "assets/style-CkM8oOZw.css"
-    ],
+    "imports": ["_modulepreload-polyfill-B5Qt9EMX.js"],
+    "css": ["assets/style-CkM8oOZw.css"],
     "assets": [
       "assets/favicon-DcIgDO7J.png",
       "assets/apple-touch-icon-Ou6JeAuw.png"
@@ -64,12 +48,8 @@
     "name": "registerV4",
     "src": "HtmlFiles/registerV4.html",
     "isEntry": true,
-    "imports": [
-      "_modulepreload-polyfill-B5Qt9EMX.js"
-    ],
-    "css": [
-      "assets/style-CkM8oOZw.css"
-    ],
+    "imports": ["_modulepreload-polyfill-B5Qt9EMX.js"],
+    "css": ["assets/style-CkM8oOZw.css"],
     "assets": [
       "assets/favicon-DcIgDO7J.png",
       "assets/apple-touch-icon-Ou6JeAuw.png"

@@ -4,26 +4,47 @@ import { InsertFunc as InsertFuncFromChatLog } from "../../../../CommonExpose/ch
 import { ReadFunc as ReadFuncFromConnectedClients } from "../../../../CommonExpose/connectedClients.js";
 
 let StartFunc = ({ inData, inws, inClients, inWss, inChatLog, inSendFunc }) => {
-    let LocalData = inData;
-    // console.log("LocalData : ", LocalData);
-    const clients = ReadFuncFromConnectedClients();
-    let localWebSocketData = clients.get(inws);
+  let LocalData = inData;
+  // console.log("LocalData : ", LocalData);
+  const clients = ReadFuncFromConnectedClients();
+  let localWebSocketData = clients.get(inws);
 
-    try {
-        let LocalDataAsJson = JSON.parse(LocalData);
+  try {
+    let LocalDataAsJson = JSON.parse(LocalData);
 
-        InsertFuncFromChatLog({ id: localWebSocketData.id, data: LocalDataAsJson, InOut: "In" });
+    InsertFuncFromChatLog({
+      id: localWebSocketData.id,
+      data: LocalDataAsJson,
+      InOut: "In",
+    });
 
-        CommonMessageAsJson({ inDataAsJson: LocalDataAsJson, inws, inClients, inWss, inChatLog, inSendFunc });
+    CommonMessageAsJson({
+      inDataAsJson: LocalDataAsJson,
+      inws,
+      inClients,
+      inWss,
+      inChatLog,
+      inSendFunc,
+    });
 
-        return;
-    } catch (error) {
-        // console.log("errr : ", error);
-    };
+    return;
+  } catch (error) {
+    // console.log("errr : ", error);
+  }
 
-    InsertFuncFromChatLog({ id: localWebSocketData.id, data: LocalData.toString(), InOut: "In" });
+  InsertFuncFromChatLog({
+    id: localWebSocketData.id,
+    data: LocalData.toString(),
+    InOut: "In",
+  });
 
-    CommonMessageAsString({ inDataAsString: LocalData.toString(), inws, inClients, inChatLog, inSendFunc });
+  CommonMessageAsString({
+    inDataAsString: LocalData.toString(),
+    inws,
+    inClients,
+    inChatLog,
+    inSendFunc,
+  });
 };
 
 export { StartFunc };

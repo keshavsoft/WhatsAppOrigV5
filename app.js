@@ -1,9 +1,9 @@
-import express from 'express';
-import http from 'http';
+import express from "express";
+import http from "http";
 
-import cookieParser from 'cookie-parser';
+import cookieParser from "cookie-parser";
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
@@ -24,7 +24,7 @@ import { router as routerFromV10 } from "./V10/routes.js";
 import { router as routerFromV11 } from "./V11/routes.js";
 import { router as routerFromV12 } from "./V12/routes.js";
 
-app.use(express.static('Public'));
+app.use(express.static("Public"));
 app.use(cookieParser());
 
 app.use("/WA", routerFromWA);
@@ -39,20 +39,20 @@ app.use("/V12", routerFromV12);
 StartFuncFromWebSocketServer(server);
 
 function normalizePort(val) {
-    var port = parseInt(val, 10);
+  var port = parseInt(val, 10);
 
-    if (isNaN(port)) {
-        return val;
-    }
+  if (isNaN(port)) {
+    return val;
+  }
 
-    if (port >= 0) {
-        return port;
-    }
+  if (port >= 0) {
+    return port;
+  }
 
-    return false;
-};
+  return false;
+}
 
 server.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-    console.log(`Open here http://localhost:${port}`);
+  console.log(`Example app listening on port ${port}`);
+  console.log(`Open here http://localhost:${port}`);
 });

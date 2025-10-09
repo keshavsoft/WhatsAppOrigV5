@@ -1,4 +1,4 @@
-import Whatsapp from 'whatsapp-web.js';
+import Whatsapp from "whatsapp-web.js";
 const { Client, LocalAuth } = Whatsapp;
 
 import { StartFunc as StartFuncFromAuthenticated } from "./authenticated.js";
@@ -9,38 +9,38 @@ import { startFunc as clientInfoFunc } from "../../CommonExpose/clientInfo.js";
 import { StartFunc as StartFuncFromAck } from "./ack.js";
 
 const StartFunc = async () => {
-    // const client = new Client();
+  // const client = new Client();
 
-    const client = new Client({
-        puppeteer: {
-            args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        },
-        authStrategy: new LocalAuth()
-    });
+  const client = new Client({
+    puppeteer: {
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    },
+    authStrategy: new LocalAuth(),
+  });
 
-    console.log("client : ", client);
+  console.log("client : ", client);
 
-    client.on('qr', qr => {
-        console.log("qr is generated : ", qr);
+  client.on("qr", (qr) => {
+    console.log("qr is generated : ", qr);
 
-        StartFuncFromQrCodeGenerated({ inQrCodeGenerated: qr })
-        // res.end(qr);
-    });
+    StartFuncFromQrCodeGenerated({ inQrCodeGenerated: qr });
+    // res.end(qr);
+  });
 
-    client.on('ready', () => {
-        console.log('client info :', Object.keys(client), Object.keys(client.info));
-        clientInfoFunc({ inClient: client });
-    });
+  client.on("ready", () => {
+    console.log("client info :", Object.keys(client), Object.keys(client.info));
+    clientInfoFunc({ inClient: client });
+  });
 
-    client.on('message', StartFuncFromInwardMessage);
-    client.on('authenticated', StartFuncFromAuthenticated);
-    client.on('message_ack', StartFuncFromAck);
-    
-    client.on('remote_session_saved', () => {
-        console.log('remote_session_saved!');
-    });
+  client.on("message", StartFuncFromInwardMessage);
+  client.on("authenticated", StartFuncFromAuthenticated);
+  client.on("message_ack", StartFuncFromAck);
 
-    await client.initialize();
+  client.on("remote_session_saved", () => {
+    console.log("remote_session_saved!");
+  });
+
+  await client.initialize();
 };
 
 export { StartFunc };

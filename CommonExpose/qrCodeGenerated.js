@@ -1,11 +1,11 @@
 let CommonQrCodeGenerated;
 
 const StartFunc = ({ inQrCodeGenerated }) => {
-    CommonQrCodeGenerated = inQrCodeGenerated;
+  CommonQrCodeGenerated = inQrCodeGenerated;
 };
 
 const GetQrCodeGenerated = () => {
-    return CommonQrCodeGenerated;
+  return CommonQrCodeGenerated;
 };
 
 export { StartFunc, GetQrCodeGenerated };

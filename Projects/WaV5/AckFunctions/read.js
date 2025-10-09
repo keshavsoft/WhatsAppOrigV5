@@ -1,6 +1,6 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import fs from 'fs';
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from "fs";
 
 const CommonEnvPath = process.env.DataPath;
 
@@ -12,29 +12,29 @@ const CommonFilesPath = path.join(__dirname, "..", "..", "..", CommonEnvPath);
 const CommonTableName = "waAckRead.json";
 
 const StartFunc = ({ inMsg }) => {
-    const LocalDataPath = path.join(CommonFilesPath, CommonTableName);
+  const LocalDataPath = path.join(CommonFilesPath, CommonTableName);
 
-    const LocalBillsData = fs.readFileSync(LocalDataPath);
-    const LocalBillsDataAsJson = JSON.parse(LocalBillsData);
+  const LocalBillsData = fs.readFileSync(LocalDataPath);
+  const LocalBillsDataAsJson = JSON.parse(LocalBillsData);
 
-    let LocalFindObject = LocalBillsDataAsJson.find(element => {
-        return element.WAAckId === inMsg.id.id;
-    });
+  let LocalFindObject = LocalBillsDataAsJson.find((element) => {
+    return element.WAAckId === inMsg.id.id;
+  });
 
-    if (LocalFindObject) {
-        return false;
-    };
+  if (LocalFindObject) {
+    return false;
+  }
 
-    let LocalInsertObject = {};
+  let LocalInsertObject = {};
 
-    LocalInsertObject.WAAckId = inMsg.id.id;
-    LocalInsertObject.ReadTS = new Date();
+  LocalInsertObject.WAAckId = inMsg.id.id;
+  LocalInsertObject.ReadTS = new Date();
 
-    LocalBillsDataAsJson.push(LocalInsertObject);
+  LocalBillsDataAsJson.push(LocalInsertObject);
 
-    fs.writeFileSync(LocalDataPath, JSON.stringify(LocalBillsDataAsJson));
+  fs.writeFileSync(LocalDataPath, JSON.stringify(LocalBillsDataAsJson));
 
-    return true;
+  return true;
 };
 
 export { StartFunc };

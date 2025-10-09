@@ -1,8 +1,8 @@
 import fs from "fs";
 
-import ParamsJson from './params.json' with {type: 'json'};
+import ParamsJson from "./params.json" with { type: "json" };
 
-const StartFunc = ({inUserName, inPassword}) => {
+const StartFunc = ({ inUserName, inPassword }) => {
   const LocalFileName = "UsersTable";
   const LocalDataPath = ParamsJson.DataPath;
 
@@ -15,15 +15,18 @@ const StartFunc = ({inUserName, inPassword}) => {
 
   try {
     if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-      let LocalRemoveUndefined = data.find(element => {
-        return element.UserName === LocalUserName && element.Password === LocalPassword
+      let LocalRemoveUndefined = data.find((element) => {
+        return (
+          element.UserName === LocalUserName &&
+          element.Password === LocalPassword
+        );
       });
 
       if (!LocalRemoveUndefined) {
-        return LocalReturnObject
-      };
+        return LocalReturnObject;
+      }
 
       LocalReturnObject.KTF = true;
       return LocalReturnObject;
@@ -32,10 +35,10 @@ const StartFunc = ({inUserName, inPassword}) => {
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
-    };
+    }
   } catch (err) {
-    console.error('Error:', err);
-  };
+    console.error("Error:", err);
+  }
 
   return LocalReturnObject;
 };

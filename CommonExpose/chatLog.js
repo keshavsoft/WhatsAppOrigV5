@@ -1,27 +1,27 @@
 const CommonChatLog = [];
 
 const ReadFunc = () => {
-    return CommonChatLog;
+  return CommonChatLog;
 };
 
 const ReturnCopyFunc = () => {
-    return [...CommonChatLog];
+  return [...CommonChatLog];
 };
 
 const RetrunInChatOnly = () => {
-    let LocalReturnChatIN = [...CommonChatLog];
+  let LocalReturnChatIN = [...CommonChatLog];
 
-    let LocalReturnChatINOnly = LocalReturnChatIN.filter(element => {
-        return element.InOut === "In";
-    });
+  let LocalReturnChatINOnly = LocalReturnChatIN.filter((element) => {
+    return element.InOut === "In";
+  });
 
-    return LocalReturnChatINOnly;
+  return LocalReturnChatINOnly;
 };
 
 const InsertFunc = (inObjectToInsert) => {
-    CommonChatLog.push(inObjectToInsert);
+  CommonChatLog.push(inObjectToInsert);
 
-    return true;
+  return true;
 };
 
 export { ReadFunc, InsertFunc, ReturnCopyFunc, RetrunInChatOnly };

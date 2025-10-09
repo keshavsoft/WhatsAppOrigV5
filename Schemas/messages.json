@@ -1,9 +1,7 @@
 {
-    "tableName": "messages",
-    "columns": [],
-    "data": {},
-    "Vertical": [],
-    "SubRoutes": [
-        "Read"
-    ]
+  "tableName": "messages",
+  "columns": [],
+  "data": {},
+  "Vertical": [],
+  "SubRoutes": ["Read"]
 }

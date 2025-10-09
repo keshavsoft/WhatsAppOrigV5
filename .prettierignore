@@ -1,0 +1,34 @@
+node_modules/
+coverage/
+dist/
+build/
+
+# Large data/generated content
+Data/**
+SV5/**
+SV6/**
+V9/**
+V10/**
+V11/**
+V12/**
+
+# Huge public/versioned asset trees
+Public/**/V*/
+Public/V7/connectedClients/
+Public/V7/messages/
+Public/V7/mobiles/
+Public/V7/StudentNames/
+
+# Lockfiles and env
+package-lock.json
+.env
+.env.*
+
+# Need permission
+Public/Bill/index1.html
+
+Public/index/assets/
+Public/Students/assets/
+
+# Ignore MD files too
+*.md

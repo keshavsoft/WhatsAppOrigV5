@@ -1,6 +1,6 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import fs from 'fs';
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from "fs";
 
 const CommonEnvPath = process.env.DataPath;
 
@@ -11,31 +11,31 @@ const __dirname = path.dirname(__filename);
 const CommonFilesPath = path.join(__dirname, "..", "..", "..", CommonEnvPath);
 
 const StartFunc = ({ inPk, inAckId }) => {
-    const LocalDataPath = path.join(CommonFilesPath, "waAck.json");
+  const LocalDataPath = path.join(CommonFilesPath, "waAck.json");
 
-    const LocalBillsData = fs.readFileSync(LocalDataPath);
-    const LocalBillsDataAsJson = JSON.parse(LocalBillsData);
+  const LocalBillsData = fs.readFileSync(LocalDataPath);
+  const LocalBillsDataAsJson = JSON.parse(LocalBillsData);
 
-    if (inPk in LocalBillsDataAsJson) {
-        return false;
-    };
+  if (inPk in LocalBillsDataAsJson) {
+    return false;
+  }
 
-    const LocalObjectToInsert = LocalFuncPrepareObject({ inAckId });
+  const LocalObjectToInsert = LocalFuncPrepareObject({ inAckId });
 
-    LocalBillsDataAsJson[inPk] = [];
-    LocalBillsDataAsJson[inPk].push(LocalObjectToInsert);
+  LocalBillsDataAsJson[inPk] = [];
+  LocalBillsDataAsJson[inPk].push(LocalObjectToInsert);
 
-    fs.writeFileSync(LocalDataPath, JSON.stringify(LocalBillsDataAsJson));
-    return true;
+  fs.writeFileSync(LocalDataPath, JSON.stringify(LocalBillsDataAsJson));
+  return true;
 };
 
 const LocalFuncPrepareObject = ({ inAckId }) => {
-    let LocalObjectToReturn = {};
+  let LocalObjectToReturn = {};
 
-    LocalObjectToReturn.WAAckId = inAckId;
-    LocalObjectToReturn.InsertedTS = new Date();
+  LocalObjectToReturn.WAAckId = inAckId;
+  LocalObjectToReturn.InsertedTS = new Date();
 
-    return LocalObjectToReturn;
+  return LocalObjectToReturn;
 };
 
 export { StartFunc };

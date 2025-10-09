@@ -1,8 +1,8 @@
 let StartFunc = ({ inSendFunc }) => {
-    inSendFunc({
-        inTypeJson: false,
-        inMessage: "YourPhone?"
-    });
+  inSendFunc({
+    inTypeJson: false,
+    inMessage: "YourPhone?",
+  });
 };
 
 export { StartFunc };

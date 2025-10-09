@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncFromWA } from "../../../../WaV5/StartWA/entryFile.js";
 
 let StartFunc = async () => {
-    await StartFuncFromWA();
+  await StartFuncFromWA();
 };
 
 export { StartFunc };

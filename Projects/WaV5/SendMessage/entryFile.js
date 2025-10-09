@@ -3,18 +3,21 @@ import { StartFunc as StartFuncFromSendWA } from "./sendToWA.js";
 import { StartFunc as StartFuncFromInsertAckToFile } from "./insertAckToFile.js";
 
 const StartFunc = async ({ inPk }) => {
-    const LocalToMobile = await StartFuncFromGeneratePdf({ inPk });
-    console.log("lllllllllll : ", LocalToMobile);
+  const LocalToMobile = await StartFuncFromGeneratePdf({ inPk });
+  console.log("lllllllllll : ", LocalToMobile);
 
-    const LocalFromSendWa = await StartFuncFromSendWA({ inPk, inToMobile: LocalToMobile });
+  const LocalFromSendWa = await StartFuncFromSendWA({
+    inPk,
+    inToMobile: LocalToMobile,
+  });
 
-    // const LocalFromSendWa = undefined;
+  // const LocalFromSendWa = undefined;
 
-    if (LocalFromSendWa === undefined) {
-        return false;
-    };
+  if (LocalFromSendWa === undefined) {
+    return false;
+  }
 
-    return StartFuncFromInsertAckToFile({ inPk, inAckId: LocalFromSendWa });
+  return StartFuncFromInsertAckToFile({ inPk, inAckId: LocalFromSendWa });
 };
 
 export { StartFunc };

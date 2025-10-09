@@ -1,9 +1,7 @@
 {
-    "tableName": "waAck",
-    "columns": [],
-    "data": {},
-    "Vertical": [],
-    "SubRoutes": [
-        "Read"
-    ]
+  "tableName": "waAck",
+  "columns": [],
+  "data": {},
+  "Vertical": [],
+  "SubRoutes": ["Read"]
 }

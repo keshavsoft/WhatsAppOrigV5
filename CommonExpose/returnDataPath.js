@@ -1,7 +1,7 @@
 let StartFunc = () => {
-    const file = "KData/JSONForAny";
+  const file = "KData/JSONForAny";
 
-    return file;
+  return file;
 };
 
 export { StartFunc };

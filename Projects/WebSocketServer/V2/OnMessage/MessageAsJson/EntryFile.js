@@ -9,57 +9,87 @@ import { StartFunc as myChat } from "./myChat.js";
 import { StartFunc as wASend } from "./wASend.js";
 import { StartFunc as wASendMulti } from "./wASendMulti.js";
 
-let StartFunc = ({ inDataAsJson, inws, inClients, inWss, inChatLog, inSendFunc }) => {
-    let LocalDataAsJson = inDataAsJson;
-    console.log("LocalDataAsJson : ", LocalDataAsJson);
+let StartFunc = ({
+  inDataAsJson,
+  inws,
+  inClients,
+  inWss,
+  inChatLog,
+  inSendFunc,
+}) => {
+  let LocalDataAsJson = inDataAsJson;
+  console.log("LocalDataAsJson : ", LocalDataAsJson);
 
-    if ("Type" in LocalDataAsJson) {
-        if (LocalDataAsJson.Type === "FromPeer") {
-            StartFuncFromPeer({ inDataAsJson: LocalDataAsJson, inws: inws, inClients: inClients });
-        };
+  if ("Type" in LocalDataAsJson) {
+    if (LocalDataAsJson.Type === "FromPeer") {
+      StartFuncFromPeer({
+        inDataAsJson: LocalDataAsJson,
+        inws: inws,
+        inClients: inClients,
+      });
+    }
 
-        if (LocalDataAsJson.Type === "ChangeName") {
-            StartFuncChangeName({ inClients, inws, inDataAsJson, inWss });
-        };
+    if (LocalDataAsJson.Type === "ChangeName") {
+      StartFuncChangeName({ inClients, inws, inDataAsJson, inWss });
+    }
 
-        if (LocalDataAsJson.Type === "sendMessage") {
-            StartFuncSendMessage({ inDataToClientAsJson: LocalDataAsJson, inws: inws, inClients: inClients });
-        };
+    if (LocalDataAsJson.Type === "sendMessage") {
+      StartFuncSendMessage({
+        inDataToClientAsJson: LocalDataAsJson,
+        inws: inws,
+        inClients: inClients,
+      });
+    }
 
-        if (LocalDataAsJson.Type === "sendMessageToAll") {
-            StartFuncSendMessageToAll({ inDataToClientAsJson: LocalDataAsJson, inws, inClients, inWss });
-        };
+    if (LocalDataAsJson.Type === "sendMessageToAll") {
+      StartFuncSendMessageToAll({
+        inDataToClientAsJson: LocalDataAsJson,
+        inws,
+        inClients,
+        inWss,
+      });
+    }
 
-        if (LocalDataAsJson.Type === "myIpAddress") {
-            StartFuncMyIpAddress({ inDataAsJson: LocalDataAsJson, inws, inClients });
-        };
+    if (LocalDataAsJson.Type === "myIpAddress") {
+      StartFuncMyIpAddress({ inDataAsJson: LocalDataAsJson, inws, inClients });
+    }
 
-        if (LocalDataAsJson.Type === "myLocation") {
-            StartFuncMyLocation({ inDataAsJson: LocalDataAsJson, inws, inClients });
-        };
+    if (LocalDataAsJson.Type === "myLocation") {
+      StartFuncMyLocation({ inDataAsJson: LocalDataAsJson, inws, inClients });
+    }
 
-        if (LocalDataAsJson.Type === "checkUser") {
-            checkUser({ inDataToClientAsJson: LocalDataAsJson, inws, inClients, inWss });
-        };
+    if (LocalDataAsJson.Type === "checkUser") {
+      checkUser({
+        inDataToClientAsJson: LocalDataAsJson,
+        inws,
+        inClients,
+        inWss,
+      });
+    }
 
-        if (LocalDataAsJson.Type === "myChat") {
-            myChat({ inDataToClientAsJson: LocalDataAsJson, inws: inws, inClients: inClients, inChatLog });
-        };
+    if (LocalDataAsJson.Type === "myChat") {
+      myChat({
+        inDataToClientAsJson: LocalDataAsJson,
+        inws: inws,
+        inClients: inClients,
+        inChatLog,
+      });
+    }
 
-        if (LocalDataAsJson.Type === "WASend") {
-            wASend({
-                inws,
-                inDataAsJson: LocalDataAsJson
-            });
-        };
+    if (LocalDataAsJson.Type === "WASend") {
+      wASend({
+        inws,
+        inDataAsJson: LocalDataAsJson,
+      });
+    }
 
-        if (LocalDataAsJson.Type === "WASendMulti") {
-            wASendMulti({
-                inws,
-                inDataAsJson: LocalDataAsJson
-            });
-        };
-    };
+    if (LocalDataAsJson.Type === "WASendMulti") {
+      wASendMulti({
+        inws,
+        inDataAsJson: LocalDataAsJson,
+      });
+    }
+  }
 };
 
 export { StartFunc };
