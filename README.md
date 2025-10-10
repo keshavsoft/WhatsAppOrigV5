@@ -1,143 +1,167 @@
 # WhatsAppOrigV5
 
-This project helps you run a local server for WhatsAppOrigV5. Follow the steps below to set up and run the project on your machine.
+WhatsAppOrigV5 is an open-source project that enables you to run a local server to interact with WhatsApp Web features, send automated messages, and handle billing functionalities—all customizable right from your own environment.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/node-%3E%3D22.22-brightgreen?style=flat-square" />
+  <img src="https://img.shields.io/badge/npm-%3E%3D9.0.0-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/license-MIT-purple?style=flat-square" />
+</p>
 
 ---
 
-✅ Summary
+## Table of Contents
 
-1.Clone the repo
+- [Features](#features)
+- [Summary: Quick Start](#summary-quick-start)
+- [🚀 Getting Started](#-getting-started)
+- [▶ Running the Server](#-running-the-server)
+- [⚡ Example Workflows](#️-example-workflows)
+- [🔖 Changelog](#-changelog)
+- [🤝 Contributing](#-contributing)
+- [📒 License](#-license)
 
-2.Install packages
+---
 
-3.Remove <--env-file=.env> from package.json
+## ✨ Features
 
-4.Run npm run start (server runs at port 3000)
+- 🟢 Rapid local setup for WhatsApp automation and billing
+- 🗒️ Simple and environment-based configuration
+- 📤 Reliable WhatsApp message & link sending with confirmation
+- 📑 Generate PDF bills easily
+- 📊 Built-in dashboard and visitor analytics (via UI)
+- 🔀 Update-ready and versioned for easy tracking
 
-5.(Optional) Use .env.local → .env for environment setup
+---
 
-6.Ensure Node.js version is v22.22 or above
+## Summary: Quick Start
 
+1. **Clone the repo**  
+   `git clone https://github.com/keshavsoft/WhatsAppOrigV5`
+
+2. **Install required packages**  
+   `cd WhatsAppOrigV5 && npm install`  
+
+3. **Update scripts (one-time)**  
+   Remove `<--env-file=.env>` from `package.json` if present for local setup.
+
+4. **Start the server**  
+   `npm run start`  
+   _Server runs at_ [`http://localhost:3000`](http://localhost:3000)
+
+5. **[Optional] Use environment config**  
+   Copy `.env.local` → `.env` and customize as needed.
+
+6. **Node.js v22.22 or above is required!**  
+   _Check your version with:_ `node --version`
+
+---
 
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
-Open your terminal (bash) and clone the repository:
-bash
-git clone https://github.com/keshavsoft/WhatsAppOrigV5
 
+```bash
+git clone https://github.com/keshavsoft/WhatsAppOrigV5
+cd WhatsAppOrigV5
+```
 
 ### 2. Install Dependencies
-Navigate into the project folder and install all required packages:
-bash
-cd WhatsAppOrigV5
-npm install
 
+```bash
+npm install
+```
 
 ### 3. Update Package Scripts
-Open the package.json file and **remove -env-file=.env** from the scripts section.
+
+- Open `package.json`
+- **Remove** `--env-file=.env` from the scripts for local development, otherwise, you may encounter unknown script errors.
 
 ---
 
 ## ▶ Running the Server
 
 ### 4. Start the Server
-Run the server with:
-bash
-npm run start
 
-The server will start on *http://localhost:3000*.
+Start the app using:
 
-### 5. (Optional) Using Environment File
-If you want to run the server with environment variables:
-1. Copy the contents of .env.local.
-2. Paste them into a new file named .env.
-3. Start the server again:
-   bash
-   npm run start
-   
-### 6. Ensure Node.js version 
-Ensure Node.js version is v22.22 or above
+```bash
+npm start
+```
+
+- The server will be available at: [http://localhost:3000](http://localhost:3000)
+
+### 5. (Optional) Configure Environment Variables
+
+For custom setups:
+
+1. Duplicate `.env.local` as `.env` (`cp .env.local .env`)
+2. Edit the new `.env` file to suit your requirements (e.g., WhatsApp authentication, ports, feature toggles).
+3. Restart the server:
+
+   ```bash
+   npm start
+   ```
+
+### 6. Node.js Version
+
+- Ensure that you are using **Node.js v22.22 or above** for all functionalities to work correctly:
+
+  ```
+  node --version
+  ```
+
 ---
 
-### 1.1.1
+## ⚡ Example Workflows
 
-- from v2 started...
+- Bills can be sent directly via WhatsApp, with PDF attachment generation and status feedback in the UI.
+- Environment variables like `WASendMessageTF` control automation toggles.
+- Billing tables, total calculations, and error handling available out of the box.
+- Visitor analytics displayed in the web dashboard (`Public/WhatsApp/V7/index.html`).
 
-### 1.1.2
+---
 
-- simle billing working good
+## 🔖 Changelog
 
-### 1.1.3
+> _Key milestones and improvements tracked since v2. Major/minor releases enhance automation, billing, UI, and error handling._
 
-- Projects WaV3 started
+<details>
+  <summary>Click to expand detailed changelog</summary>
 
-### 1.1.4
+- **1.1.1** – v2 started...
+- **1.1.2** – Simple billing working good
+- **1.1.3** – Projects WaV3 started
+- **1.1.4** – WaV3 bill sent successfully
+- **1.1.5** – WA bill sent with confirmation in data
+- **1.1.6** – WA tables added
+- **1.1.7** – V7: only non-secure for array
+- **1.1.8** – WA automatic messages (from .env: `WASendMessageTF`)
+- **1.1.9** – Bill: perfect PDF creation
+- **1.1.10** – WA send link in UI as well
+- **1.1.11** – WA send perfect with port
+- **1.1.12** – WA send: sandbox added
+- **1.1.13** – Bill: total added to header; V10 added
+- **1.1.14** – Bill: pending WA sent status display
+- **1.1.15** – API V11 added; WA send perfect from UI
+- **1.1.16** – Bill V8 started, save repeat stopped; error handling in progress
+- **1.1.17** – Bill V8 fix: index error corrected
+- **1.1.18** – Bill V9: advanced error handling in index.html
+- **1.1.19** – Bill V9: item/rate error resolution
+- **1.1.20** – New V12 features added (in development as of yesterday)
 
-- WaV3 bill sent successfull
+</details>
 
-### 1.1.5
+---
 
-- wa bill sent with confirmation in data
+## 🤝 Contributing
 
-### 1.1.6
+Pull requests and feedback are always welcome. Please open issues for suggestions, bugs, or feature requests!
 
-- wa tables added
+---
 
-### 1.1.7
+## 📒 License
 
-- V7 only nonsec for array
-
-### 1.1.8
-
-- WA automatic messages perfect with TF from .env file : WASendMessageTF
-
-### 1.1.9
-
-- bill perfect creation to pdf
-
-### 1.1.10
-
-- WA send link in UI also
-
-### 1.1.11
-
-- WA send perfect with port
-
-### 1.1.12
-
-- WA send perfect with sand box added
-
-### 1.1.13
-
-- bill add total added to header and new V10 added
-
-### 1.1.14
-
-- bill still need to show wa sent status
-
-### 1.1.15
-
-- Api V11 added, and wa send perfect from UI
-
-### 1.1.16
-
-- bill V8 started, save repeat stopped and error still working on
-
-### 1.1.17
-
-- bill V8 vill in index error
-
-### 1.1.18
-
-- bill V9 started for error handling in index.html
-
-### 1.1.19
-
-- bill V9 started item, rate error perfect
-
-### 1.1.20
-
-- new V12 added and working on yesterday
+© 2023 Keshav Soft. Released under the MIT license.
 
 ---
