@@ -172,7 +172,8 @@
                             class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                             <h1 id="BillNumberId" class="RefreshBSTableClass">16</h1>
                             <h2 class="RefreshBSTableYesterdayClass" style="display: none;">16</h2>
-                            <h3 class="RefreshBSTableThisWeekClass" style="display: none;">16</h3>
+                            <h3 class="RefreshBSTable2DaysBefore1" style="display: none;">16</h3>
+                            <h4 class="RefreshBSTableThisWeekClass" style="display: none;">16</h4>
                         </a>
                         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                             <li>
@@ -235,25 +236,30 @@
                 <button class="nav-link active" id="Today-tab" data-bs-toggle="tab" data-bs-target="#Today-tab-pane"
                     type="button" role="tab" aria-controls="Today-tab-pane" aria-selected="true">Today</button>
             </li>
+
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="Yesterday-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                <button class="nav-link" id="Yesterday-tab" data-bs-toggle="tab" data-bs-target="#Yesterday-tab-pane"
                     type="button" role="tab" aria-controls="Yesterday-tab-pane" aria-selected="false">Yesterday</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+                <button class="nav-link" id="2DaysBefore-tab" data-bs-toggle="tab"
+                    data-bs-target="#2DaysBefore-tab-pane" type="button" role="tab" aria-controls="2DaysBefore-tab-pane"
+                    aria-selected="false">2 Days Before</button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
-                    type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
-                    disabled>Disabled</button>
-            </li>
+
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="Today-tab-pane" role="tabpanel" aria-labelledby="Today-tab"
                 tabindex="0">
+
+                <div id="toolbarForToday">
+                    <button class="btn btn-danger RefreshBSTableClass">
+                        <i class="fa fa-trash"></i> Show Data
+                    </button>
+                </div>
+
                 <table id="table" class="table table-bordered table-striped" data-show-footer="true"
-                    data-toolbar="#toolbar" data-search="true" data-show-footer="true">
+                    data-toolbar="#toolbarForToday" data-search="true" data-show-footer="true">
                     <thead>
                         <tr>
                             <th data-field="KS-Serial" data-formatter="window.GlobalSerialFormatter">#</th>
@@ -268,14 +274,10 @@
                     </thead>
                 </table>
             </div>
+
             <div class="tab-pane fade" id="Yesterday-tab-pane" role="tabpanel" aria-labelledby="Yesterday-tab"
                 tabindex="0">
-                <h1>yyyyyyyyyyyyyy</h1>
-             
-            </div>
-            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                 <h1>wwwwwwwwwww</h1>
-                    <table id="tableYesterday" class="table table-bordered table-striped" data-show-footer="true"
+                <table id="tableYesterday" class="table table-bordered table-striped" data-show-footer="true"
                     data-search="true" data-show-footer="true">
                     <thead>
                         <tr>
@@ -290,9 +292,35 @@
                         </tr>
                     </thead>
                 </table>
-                ...</div>
-            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                tabindex="0">...</div>
+
+            </div>
+
+            <div class="tab-pane fade" id="2DaysBefore-tab-pane" role="tabpanel" aria-labelledby="2DaysBefore-tab"
+                tabindex="0">
+
+                <div id="toolbarFor2DaysBefore">
+                    <button class="btn btn-danger RefreshBSTable2DaysBefore">
+                        <i class="fa fa-trash"></i> Show Data
+                    </button>
+                </div>
+
+                <table id="table2DaysBefore" class="table table-bordered table-striped" data-show-footer="true"
+                    data-search="true" data-show-footer="true" data-toolbar="#toolbarFor2DaysBefore">
+                    <thead>
+                        <tr>
+                            <th data-field="KS-Serial" data-formatter="window.GlobalSerialFormatter">#</th>
+                            <th data-field="BuyerName">BuyerName</th>
+                            <th data-field="BuyerAddress">BuyerAddress</th>
+                            <th data-field="BuyerGST">BuyerGST</th>
+                            <!-- <th data-field="InvoiceNo">InvoiceNo</th> -->
+                            <th data-field="InvoiceDate">Date</th>
+                            <th data-field="pk">pk</th>
+                            <th data-field="KS-Delete" data-formatter="window.GlobalDeleteFormatter">Options</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
         </div>
 
     </div>
