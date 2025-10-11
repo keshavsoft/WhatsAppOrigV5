@@ -10,13 +10,11 @@ This project helps you run a local server for WhatsAppOrigV5. Follow the steps b
 
 2.Install packages
 
-3.Remove <--env-file=.env> from package.json
+3.Use .env.local → .env for environment setup
 
-4.Run npm run start (server runs at port 3000)
+4.Run npm run start (server runs at port 9010)
 
-5.(Optional) Use .env.local → .env for environment setup
-
-6.Ensure Node.js version is v22.22 or above
+5.Ensure Node.js version is v22.22 or above
 
 
 ## 🚀 Getting Started
@@ -34,10 +32,10 @@ cd WhatsAppOrigV5
 npm install
 
 
-### 3. Update Package Scripts
-Open the package.json file and **remove -env-file=.env** from the scripts section.
-
----
+### 3. Using Environment File
+To run the server, create a .env file by copying the contents of .env.local:
+1. Copy the contents of .env.local.
+2. Paste them into a new file named .env.
 
 ## ▶ Running the Server
 
@@ -46,16 +44,8 @@ Run the server with:
 bash
 npm run start
 
-The server will start on *http://localhost:3000*.
+The server will start on *http://localhost:9010*.
 
-### 5. (Optional) Using Environment File
-If you want to run the server with environment variables:
-1. Copy the contents of .env.local.
-2. Paste them into a new file named .env.
-3. Start the server again:
-   bash
-   npm run start
-   
 ### 6. Ensure Node.js version 
 Ensure Node.js version is v22.22 or above
 ---
@@ -139,9 +129,5 @@ Ensure Node.js version is v22.22 or above
 ### 1.1.20
 
 - new V12 added and working on yesterday
-
-### 1.1.21
-
-- bill started as tab pages
 
 ---
