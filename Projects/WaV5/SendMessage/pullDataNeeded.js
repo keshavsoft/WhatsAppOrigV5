@@ -145,7 +145,7 @@ const LocalFuncForTotal = ({ inItemsArray }) => {
         TaxableValue: jVarLocalTaxableValue.toFixed(2),
         TaxString: jVarLocalTaxString,
         TotalAmount: ` ₹ ${sum.toFixed(0)}`,
-        InWords: LocalInWords
+        InWords: `( in words : ${LocalInWords} rupees only)`
     };
 };
 
