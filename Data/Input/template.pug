@@ -177,6 +177,11 @@ html(lang="en")
           flex: 1;
           padding: 20px;
       }
+      .amount-words {
+          font-style: italic;
+          font-weight: bold;
+          margin: 15px 0;
+      }
 
   body
     .invoice(role="document")
@@ -250,6 +255,9 @@ html(lang="en")
             td.right(style="font-weight:700; padding-top:8px; font-size:20px;")=TotalAmount
 
       .d-flex.flex-wrap.justify-content-end.align-items-center.gap-2.small.border.rounded.p-2.bg-light
+
+      div
+        .amount-words=InWords
 
       .flex-container
         div

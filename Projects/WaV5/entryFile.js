@@ -1,5 +1,5 @@
 import express from 'express';
-// import { StartFunc as StartFuncFromStartWA } from "./startWA.js";
+
 import { StartFunc as StartFuncFromSendMessage } from "./SendMessage/entryFile.js";
 import { StartFunc as StartFuncFromGeneratePdf } from "./GeneratePdf/entryFile.js";
 import { StartFunc as StartFuncFromStartWA } from "./StartWA/entryFile.js";

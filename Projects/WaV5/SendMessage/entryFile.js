@@ -4,7 +4,7 @@ import { StartFunc as StartFuncFromInsertAckToFile } from "./insertAckToFile.js"
 
 const StartFunc = async ({ inPk }) => {
     const LocalToMobile = await StartFuncFromGeneratePdf({ inPk });
-    console.log("lllllllllll : ", LocalToMobile);
+    // console.log("lllllllllll : ", LocalToMobile);
 
     const LocalFromSendWa = await StartFuncFromSendWA({ inPk, inToMobile: LocalToMobile });
 
